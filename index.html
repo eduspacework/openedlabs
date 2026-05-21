@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenEd Labs — Free, open education for all</title>
+  <meta name="description" content="OpenEd Labs publishes free, open educational resources, curriculum, assessments, and supports community-driven implementation to expand equitable learning opportunities." />
+  <style>
+    :root{
+      --bg:#fff7ed;
+      --panel:#ffffff;
+      --muted:#6b5b4b;
+      --accent:#ff9f1a;
+      --accent-2:#ffd166;
+      --accent-dark:#d97900;
+      --radius:12px;
+      --maxw:1200px;
+      --shadow: 0 12px 36px rgba(17,24,39,0.08);
+      --ff: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--ff);background:linear-gradient(180deg,var(--bg),#fff);color:#2b2b2b}
+    a{color:var(--accent-dark);text-decoration:none}
+    .site{max-width:1200px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:22px;box-shadow:var(--shadow)}
+    .site-title h1{margin:0;font-size:20px}
+    .site-title p{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px;align-items:center}
+    .nav-link{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted);background:transparent}
+    .nav-link.primary{background:var(--accent);color:#fff}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;margin-top:22px;align-items:start}
+    .hero-card{background:var(--panel);border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--accent-2),#fff);color:var(--accent-dark);padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    .headline{font-size:28px;margin:12px 0 8px 0;line-height:1.15}
+    .lead{color:#3a3a3a;font-size:16px;line-height:1.5}
+    .cta-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-outline{background:transparent;border:2px solid rgba(255,159,26,0.12);color:var(--accent-dark);padding:10px 14px;border-radius:10px}
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{background:linear-gradient(180deg,#fff,#fff5e6);padding:12px;border-radius:12px;min-width:120px;text-align:center}
+    .right-panel{background:linear-gradient(180deg,#fff, #fffaf0);border-radius:12px;padding:18px;border:1px solid rgba(255,159,26,0.08)}
+    .panel-cta{display:flex;flex-direction:column;gap:10px}
+    section{margin-top:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:var(--panel);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+    .products{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .product{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff9f0);border:1px solid rgba(255,159,26,0.06)}
+    .icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#fff7e6,#fff1d6);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent-dark)}
+    .feature-list{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .feature-item{display:flex;gap:8px;align-items:center}
+    .dot{width:8px;height:8px;background:var(--accent-dark);border-radius:50%}
+    .testimonials{display:flex;gap:12px;flex-wrap:wrap}
+    .testimonial{flex:1;min-width:240px;padding:14px;border-radius:10px;background:#fff;border:1px solid #fff6e6}
+    .quote{font-size:15px;color:#3a3a3a}
+    footer{margin-top:28px;padding-top:18px;border-top:1px dashed rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .small-muted{color:var(--muted);font-size:13px}
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .products{grid-template-columns:1fr}
+      nav{display:none}
+    }
+    @media (max-width:520px){
+      .logo{width:56px;height:56px;font-size:18px}
+      .headline{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="site" role="main" aria-label="OpenEd Labs — Free open education">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">OE</div>
+        <div class="site-title">
+          <h1>OpenEd Labs</h1>
+          <p>Free and open education for all — curriculum, assessment, and community.</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#what">What we do</a>
+        <a class="nav-link" href="#resources">Resources</a>
+        <a class="nav-link" href="#community">Community</a>
+        <a class="nav-link primary" href="#contribute">Contribute</a>
+      </nav>
+    </header>
+
+    <div class="hero" role="region" aria-labelledby="hero-heading">
+      <div class="hero-card">
+        <span class="eyebrow">Free • Open • Accessible</span>
+        <h2 id="hero-heading" class="headline">Free educational resources, openly licensed — for every classroom and learner</h2>
+        <p class="lead">OpenEd Labs creates and curates high-quality, openly licensed curriculum, formative assessments, and educator supports so schools, teachers, and communities can access and adapt resources at no cost.</p>
+
+        <div class="cta-row" role="group" aria-label="Primary calls to action">
+          <button class="btn" onclick="location.href='#contribute'">Contribute or collaborate</button>
+          <button class="btn-outline" onclick="location.href='#resources'">Browse free resources</button>
+          <a class="btn-outline" href="#community">Join the community</a>
+        </div>
+
+        <div class="stats" aria-hidden="true">
+          <div class="stat"><strong>500+</strong><span class="small">free resources</span></div>
+          <div class="stat"><strong>300k</strong><span class="small">student lessons delivered</span></div>
+          <div class="stat"><strong>CC‑BY</strong><span class="small">open license on core materials</span></div>
+        </div>
+
+        <div style="margin-top:18px">
+          <h3 style="margin:0 0 8px 0">Our promise</h3>
+          <ul style="margin:0 0 0 18px;color:var(--muted)">
+            <li>Free to use and adapt — no paywalls.</li>
+            <li>Designed with teachers for practical classroom use.</li>
+            <li>Centering equity, accessibility, and cultural relevance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="right-panel" aria-labelledby="right-heading">
+        <h3 id="right-heading" style="margin:0 0 8px 0">Get involved</h3>
+        <div class="panel-cta">
+          <div style="font-size:14px;color:var(--muted)">Contribute resources, translate materials, or run a local pilot.</div>
+          <a class="btn" href="#contribute">Contribute now</a>
+          <div style="border-top:1px dashed rgba(0,0,0,0.04);padding-top:12px">
+            <div class="small-muted">Contact</div>
+            <div style="margin-top:6px;font-weight:700">community@openedlabs.org</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--muted)">Press & partnerships: <a href="mailto:partnerships@openedlabs.org">partnerships@openedlabs.org</a></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="what" aria-labelledby="what-heading">
+      <h2 id="what-heading" style="margin:0 0 12px 0;font-size:20px">What we do</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Open curriculum</h3>
+          <p>Complete unit packages with lesson plans, student materials, and teacher notes that any educator can adapt and use for free.</p>
+        </div>
+        <div class="card">
+          <h3>Accessible assessments</h3>
+          <p>Short, classroom-friendly formative checks and rubrics designed for diverse learners and immediate instructional feedback.</p>
+        </div>
+        <div class="card">
+          <h3>Community & support</h3>
+          <p>Forums, translation drives, and implementation guides so schools and volunteers can adopt and localize materials.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading" style="margin:0 0 12px 0;font-size:20px">Featured free resources</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div class="card">
+          <h3>Open Unit: Elementary Science — Plants</h3>
+          <p>Inquiry-based lessons, student handouts, and assessments with accommodation notes. CC‑BY.</p>
+          <div style="margin-top:8px"><a href="#">Download (ZIP)</a></div>
+        </div>
+        <div class="card">
+          <h3>Formative toolkit: Early literacy checks</h3>
+          <p>Short probes and scoring rubrics teachers can run in 5 minutes, plus teacher guidance.</p>
+          <div style="margin-top:8px"><a href="#">Open toolkit</a></div>
+        </div>
+        <div class="card">
+          <h3>Multilingual translation pack</h3>
+          <p>Community-contributed translations and a guide to localizing materials respectfully.</p>
+          <div style="margin-top:8px"><a href="#">Browse translations</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" aria-labelledby="community-heading">
+      <h2 id="community-heading" style="margin:0 0 12px 0;font-size:20px">Community</h2>
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:12px">
+        <div class="card">
+          <h3>Volunteer & partner network</h3>
+          <p>Teachers, researchers, and volunteers contribute lesson improvements, field tests, and translations. We provide lightweight onboarding, templates, and recognition for contributors.</p>
+          <div style="margin-top:12px">
+            <strong>Recent collaboration:</strong>
+            <p style="margin:6px 0 0;color:var(--muted)">A district partnership to adapt open units for culturally relevant contexts and measure outcomes across 8 schools.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Events & workshops</h3>
+          <p>Monthly virtual workshops on implementing open units, facilitating formative cycles, and adapting materials locally.</p>
+          <div style="margin-top:8px"><a href="#events">See upcoming events</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contribute" aria-labelledby="contribute-heading">
+      <h2 id="contribute-heading" style="margin:0 0 12px 0;font-size:20px">Contribute & collaborate</h2>
+      <div class="card" style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <h3 style="margin-top:0">How you can help</h3>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>Author or adapt units and publish under CC‑BY</li>
+            <li>Translate materials into local languages</li>
+            <li>Run a pilot and share implementation notes</li>
+            <li>Contribute teacher-facing examples and videos</li>
+          </ul>
+        </div>
+        <div style="min-width:220px">
+          <div style="margin-bottom:10px"><a class="btn" href="mailto:contribute@openedlabs.org?subject=I want to contribute">Start contributing</a></div>
+          <div style="font-size:13px;color:var(--muted)">We provide contributor templates, a light review process, and badges for published contributors.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" aria-labelledby="impact-heading">
+      <h2 id="impact-heading" style="margin:0 0 12px 0;font-size:20px">Impact</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="quote">“OpenEd Labs’ openly licensed unit saved our small nonprofit thousands and helped us reach students in rural areas with no textbook budget.”</div>
+          <div style="margin-top:8px;font-weight:700">— Program Director, Learning NGO</div>
+        </div>
+        <div class="testimonial">
+          <div class="quote">“We translated and adapted units for our community — teachers reported higher student engagement.”</div>
+          <div style="margin-top:8px;font-weight:700">— District Curriculum Lead</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="small-muted">© OpenEd Labs • Built May 21, 2026 • Core resources CC‑BY</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="small-muted" href="#">Contribute guidelines</a>
+        <a class="small-muted" href="#">Terms</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
