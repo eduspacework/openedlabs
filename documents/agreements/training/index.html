@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenedLabs Training Engagement Agreement</title>
+<style>
+@page{size:A4;margin:12mm}
+body{font-family:Arial,sans-serif;font-size:12px;color:#222;background:#eef2f5;margin:0}
+.container{width:210mm;min-height:297mm;margin:auto;background:#fff;padding:14mm;box-sizing:border-box}
+.header{display:flex;justify-content:space-between;border-bottom:3px solid #0d6efd;padding-bottom:10px}
+.brand h1{margin:0;color:#0d6efd;font-size:26px}.brand small{color:#666}.brand a,.footer a{color:#0d6efd;text-decoration:none}
+.doc-info{min-width:300px}.doc-title{text-align:right;font-size:18px;font-weight:700;margin-bottom:12px}
+.doc-row{display:grid;grid-template-columns:120px 1fr;gap:12px;margin:4px 0}.doc-row span:first-child{font-weight:bold;color:#555}
+.section{margin-top:12px;background:#f5f8fc;border-left:4px solid #0d6efd;padding:6px 8px;font-weight:bold;color:#0d6efd}
+table{width:100%;border-collapse:collapse}td{border:1px solid #ddd;padding:6px}.label{width:34%;background:#fafafa;font-weight:bold}
+.cols{display:flex;gap:18px}.cols>div{flex:1}ul{margin:6px 0 0 18px}
+.sign td{height:95px;vertical-align:bottom;text-align:center}
+.footer{text-align:center;border-top:1px solid #ccc;margin-top:12px;padding-top:8px;font-size:10px;color:#666}
+@media print{body{background:#fff}.container{box-shadow:none;margin:0;padding:0}}
+</style></head><body><div class="container">
+<div class="header">
+<div class="brand"><h1>OpenedLabs</h1><small>Professional Training • Workshops • Faculty Development • Industry Programs</small><br><a href="https://openedlabs.eduspace.work">https://openedlabs.eduspace.work</a></div>
+<div class="doc-info">
+<div class="doc-title">TRAINING ENGAGEMENT AGREEMENT</div>
+<div class="doc-row"><span>Agreement No.</span><span id="agreementNo"></span></div>
+<div class="doc-row"><span>Version</span><span>v1.0</span></div>
+<div class="doc-row"><span>Date</span><span id="currentDate"></span></div>
+</div></div>
+<p>This Training Engagement Agreement ("Agreement") is entered into between <b>OpenedLabs</b> ("Training & Consulting Partner") and the participating <b>Institute / Company</b> ("Client") for the purpose of planning and delivering the training programme described below.</p>
+<div class="section">1. Parties to the Agreement</div>
+<table>
+<tr><td class="label">First Party</td><td><b>OpenedLabs</b><br>Training & Consulting Partner<br>https://openedlabs.eduspace.work</td></tr>
+<tr><td class="label">Authorized Representative</td><td></td></tr>
+<tr><td class="label">Institute / Company</td><td></td></tr>
+<tr><td class="label">Client Representative</td><td></td></tr>
+<tr><td class="label">Designation</td><td></td></tr>
+<tr><td class="label">Email / Phone</td><td></td></tr>
+</table>
+<div class="section">2. Training Engagement Details</div>
+<table>
+<tr><td class="label">Training Title</td><td></td></tr>
+<tr><td class="label">Training Domain</td><td></td></tr>
+<tr><td class="label">Objective</td><td></td></tr>
+<tr><td class="label">Mode</td><td>☐ Online &nbsp; ☐ Offline &nbsp; ☐ Hybrid</td></tr>
+<tr><td class="label">Duration</td><td></td></tr>
+<tr><td class="label">Training Date(s)</td><td></td></tr>
+<tr><td class="label">Venue / Platform</td><td></td></tr>
+<tr><td class="label">Expected Participants</td><td></td></tr>
+</table>
+<div class="section">3. Commercial Details</div>
+<table><tr><td class="label">Training Fee</td><td>As mutually agreed.</td></tr><tr><td class="label">Payment Terms</td><td>As per approved quotation/proposal.</td></tr></table>
+<div class="section">4. Responsibilities</div>
+<div class="cols"><div><b>OpenedLabs</b><ul><li>Assign qualified trainer(s).</li><li>Deliver training professionally.</li><li>Provide agreed learning material.</li></ul></div><div><b>Institute / Company</b><ul><li>Provide venue/platform.</li><li>Coordinate participants.</li><li>Communicate schedule changes.</li></ul></div></div>
+<div class="section">5. General Terms</div>
+<ul><li>This Agreement confirms OpenedLabs' engagement.</li><li>Scope changes require mutual consent.</li><li>Both parties shall maintain professional conduct.</li><li>This Agreement does not create an employment relationship.</li></ul>
+<div class="section">6. Acceptance & Authorization</div>
+<p>By signing below, both parties agree to the terms of this Agreement.</p>
+<table class="sign"><tr><td><b>For OpenedLabs</b><br><br>_____________________<br>Authorized Representative<br>Name:<br>Date:</td><td><b>For Institute / Company</b><br><br>_____________________<br>Authorized Representative<br>Name:<br>Date:<br>Official Seal</td></tr></table>
+<div class="footer">Official document issued by <b>OpenedLabs</b><br><a href="https://openedlabs.eduspace.work">https://openedlabs.eduspace.work</a></div>
+</div>
+<script>
+const d=new Date();
+currentDate.textContent=d.toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'});
+agreementNo.textContent=`OL-ENG-${d.getFullYear()}-${Math.floor(1000+Math.random()*9000)}`;
+</script></body></html>
