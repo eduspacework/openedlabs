@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openEd Labs | Company Trainer Profile</title>
+
+  <style>
+    :root {
+      --primary: #123c69;
+      --secondary: #1d6fa5;
+      --accent: #f4a261;
+      --text: #263238;
+      --muted: #607d8b;
+      --light: #f4f8fb;
+      --border: #dce6ed;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #eef3f7;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .ed-black {
+  color: #000000;
+}
+
+
+    .hero {
+      padding: 55px 65px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 42px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h2 {
+      margin: 0 0 20px;
+      font-size: 21px;
+      font-weight: normal;
+      color: #e5f2fb;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .website {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--white);
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .content {
+      padding: 45px 65px;
+    }
+
+    section {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      color: var(--primary);
+      font-size: 25px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h3 {
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    ul {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      padding: 8px 13px;
+      color: var(--primary);
+      background: #e8f2f8;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .trainer-box {
+      padding: 25px;
+      background: #fffaf2;
+      border-left: 5px solid var(--accent);
+    }
+
+    .trainer-box p {
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      padding: 28px;
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 8px;
+    }
+
+    .contact h2 {
+      color: var(--white);
+      border-bottom-color: var(--accent);
+    }
+
+    .contact a {
+      color: var(--white);
+    }
+
+    footer {
+      padding: 22px 65px;
+      color: var(--muted);
+      background: #f7fafc;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        margin: 0;
+      }
+
+      .hero,
+      .content {
+        padding: 35px 25px;
+      }
+
+      footer {
+        padding: 20px 25px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        max-width: none;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .card,
+      .contact {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="hero">
+  <h1>open<span class="ed-black">Ed</span> Labs</h1>
+  <h2>Company  &amp; Technical Education Profile</h2>
+
+  <p>
+    Practical technical education and skill development in programming,
+    computer science, generative AI, and emerging technologies.
+  </p>
+
+  <a class="website" href="https://openedlabs.eduspace.work" target="_blank">
+    openedlabs.eduspace.work
+  </a>
+</header>
+
+
+    <div class="content">
+
+      <section>
+        <h2>About openEd Labs</h2>
+
+        <p>
+          openEd Labs is a technical education and skill-development initiative
+          focused on practical learning in programming, computer science,
+          generative AI, and emerging technologies.
+        </p>
+
+        <p>
+          The organization supports students, schools, colleges, educational
+          institutions, corporate organizations, government bodies, and
+          individual learners through structured training, mentorship,
+          assignments, assessments, and project guidance.
+        </p>
+      </section>
+
+      <section>
+        <h2>Core Training Areas</h2>
+
+        <div class="tag-list">
+          <span class="tag">Programming</span>
+          <span class="tag">Computer Science</span>
+          <span class="tag">Generative AI</span>
+          <span class="tag">Applied AI</span>
+          <span class="tag">Emerging Technologies</span>
+          <span class="tag">Technical Skill Development</span>
+          <span class="tag">Live Coding</span>
+          <span class="tag">Project Mentorship</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Training Audiences</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Students and Learners</h3>
+            <ul>
+              <li>School students</li>
+              <li>College students</li>
+              <li>Individual learners</li>
+              <li>Students working on technical projects</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Organizations</h3>
+            <ul>
+              <li>Schools and colleges</li>
+              <li>Training institutes</li>
+              <li>Corporate organizations</li>
+              <li>Government departments and institutions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Training Formats</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Instructor-Led Programs</h3>
+            <p>
+              Live online, offline, or hybrid sessions for individuals,
+              classrooms, batches, and organizational teams.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Workshops and Seminars</h3>
+            <p>
+              Short-term workshops, guest lectures, technology awareness
+              programs, and practical demonstrations.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Personalized Mentorship</h3>
+            <p>
+              One-to-one guidance, coding support, project mentoring, doubt
+              resolution, and code reviews.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Customized Programs</h3>
+            <p>
+              Training programs designed according to the organization’s
+              subject, audience, duration, and learning objectives.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Program Delivery Approach</h2>
+
+        <ul>
+          <li>Structured instructor-led sessions</li>
+          <li>Interactive explanations and demonstrations</li>
+          <li>Live coding and practical exercises</li>
+          <li>Assignments and assessments</li>
+          <li>Real-time doubt resolution</li>
+          <li>Project guidance and mentoring</li>
+          <li>Code review and feedback</li>
+          <li>Progress evaluation and learning support</li>
+          <li>Completion recognition or certification, where applicable</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Institutional and Corporate Training</h2>
+
+        <p>
+          openEd Labs can work with educational institutions, companies,
+          training organizations, and government bodies to plan technical
+          learning programs based on their requirements.
+        </p>
+
+        <p>
+          Training engagements may be customized according to the participant
+          profile, batch size, subject, duration, delivery format, schedule,
+          and expected learning outcomes.
+        </p>
+      </section>
+
+      <section>
+        <h2>Trainer Profile</h2>
+
+        <div class="trainer-box">
+          <p><strong>Name:</strong> SAGAR VIRMANI</p>
+          <p><strong>Designation:</strong> Lead Trainer</p>
+          <p><strong>Primary Areas:</strong>Python and Java Programming, Software Testing and Automation, Data Structures, Software Engineering, Linux Administration, Data Analysis, Generative AI, and Project-Based Technical Training</p>
+          <p><strong>Educational Qualifications:</strong>B.Tech in Software Engineering — SRM University, May 2013–June 2017 <br>
+<i>Relevant Coursework: </i>Software Architecture, Data Structures and Algorithms, Operating Systems, Database Systems, Computer Networks, Software Testing, Object-Oriented Design, Software Project Management, and Agile Methodologies.</p>
+          <p><strong>Certifications:</strong> RHCSA Training in Linux Administration<br>
+Network Management Training — IIT Kharagpur through Nettech</p>
+          <p><strong>Professional Experience:</strong> 
+          <p>
+  Experienced Software Engineer and Technical Trainer with 8+ years of
+  experience in Python, Java, software engineering, QA automation, API
+  testing, Linux administration, CI/CD, build and release management, data
+  analysis, and technical mentoring.
+  <br />
+
+  Currently leading openEd Labs, where I conduct practical training programs
+  in Generative AI, programming, and emerging technologies.
+  <br />
+
+  Previously worked as an IT Trainer at Datasphere, delivering project-based
+  courses in Python, Java, Data Structures, Software Engineering, and Data
+  Analysis.
+  <br />
+
+  Also gained industry experience as a QA Engineer at Evertz Microsystems and
+  as a Software Engineer at Capgemini, contributing to test automation,
+  deployment workflows, release management, and software quality processes.
+</p>
+
+          </p>
+          <p><strong>Training Experience:</strong>  Delivered practical, project-based training in Python, Java, Data
+  Structures, Software Engineering, Data Analysis, Linux Administration,
+  Software Testing, and Generative AI.<br />
+  Experienced in live instruction, coding demonstrations, assignments,
+  assessments, project mentoring, and personalized learner support for
+  students, educators, and organizations.</p>
+          <p><strong>Subjects Delivered:</strong> Python, Java, C/C++, Shell Scripting, Data Structures and Algorithms,
+  Software Engineering, Object-Oriented Programming, Linux Administration,
+  Software Testing, Generative AI, and Project-Based Programming.</p>
+          <p><strong>Delivery Modes:</strong> Online / Offline / Hybrid</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vsagar10">vsagar10</a>
+</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why Work With openEd Labs?</h2>
+
+        <ul>
+          <li>Practical and application-oriented technical education</li>
+          <li>Training in programming, computer science, and generative AI</li>
+          <li>Flexible online, offline, and hybrid delivery options</li>
+          <li>Programs for students, institutions, companies, and government bodies</li>
+          <li>Structured sessions supported by assignments and assessments</li>
+          <li>Personalized mentoring and project guidance</li>
+          <li>Focus on future-ready and emerging technology skills</li>
+          <li>Customizable programs based on organizational requirements</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engagement Options</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Educational Institutions</h3>
+            <p>
+              Student training, faculty development, programming bootcamps,
+              project mentoring, and technology workshops.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Corporate Organizations</h3>
+            <p>
+              Technical upskilling, generative AI awareness, programming
+              training, and customized employee learning programs.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Government Organizations</h3>
+            <p>
+              Technical education, capacity-building initiatives, and
+              skill-development programs.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Individual Learners</h3>
+            <p>
+              One-to-one mentorship, coding guidance, project support, and
+              personalized learning programs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2>Contact</h2>
+
+        <p><strong>Organization:</strong> openEd Labs</p>
+        <p>
+          <strong>Website:</strong>
+          <a href="https://openedlabs.eduspace.work" target="_blank">
+            openedlabs.eduspace.work
+          </a>
+        </p>
+        <p><strong>Email:</strong> openedlabs@gmail.com</p>
+        <p><strong>Phone:</strong> +91 82194 45867</p>
+        <p><strong>Contact Person:</strong> Shahni, Training & Partnerships Manager</p>
+      </section>
+
+    </div>
+
+    <footer>
+      © 2026 openEd Labs. All rights reserved.
+    </footer>
+
+  </main>
+</body>
+</html>
