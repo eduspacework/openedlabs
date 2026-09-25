@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>QACommunity | An OpenEd Labs Initiative</title>
+
+  <meta
+    name="description"
+    content="QACommunity is an OpenEd Labs initiative for QA Engineers, Software Testers, SDETs, Aspiring Testers, and QA Trainers."
+  />
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand h1 {
+      color: var(--secondary);
+      font-size: 1.55rem;
+      line-height: 1.1;
+    }
+
+    .initiative {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-link {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      background: var(--white);
+      border-color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .hero {
+      padding: 105px 0 95px;
+      background:
+        linear-gradient(rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0.96)),
+        radial-gradient(circle at top right, #bfdbfe, transparent 35%);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow,
+    .initiative-label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      color: var(--secondary);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-card {
+      padding: 32px;
+      color: var(--white);
+      background: var(--secondary);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      position: relative;
+      padding-left: 27px;
+      margin-bottom: 14px;
+      color: #cbd5e1;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      color: var(--secondary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .benefit-grid,
+    .feature-grid,
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 10px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .light-section {
+      background: var(--light);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .list-card {
+      padding: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .list-card h3 {
+      color: var(--secondary);
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 13px;
+      color: var(--text);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .fee-box {
+      max-width: 580px;
+      margin: 0 auto 35px;
+      padding: 35px;
+      text-align: center;
+      background: var(--white);
+      border: 2px solid #bfdbfe;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .fee-box .amount {
+      color: var(--primary);
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 10px 0;
+    }
+
+    .fee-box p {
+      color: var(--muted);
+    }
+
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .assessment-item {
+      padding: 18px;
+      text-align: center;
+      color: var(--text);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .trainer-section {
+      color: var(--white);
+      background: var(--secondary);
+    }
+
+    .trainer-section .section-heading h2,
+    .trainer-section .section-heading p {
+      color: var(--white);
+    }
+
+    .trainer-section .section-heading p {
+      color: #cbd5e1;
+    }
+
+    .trainer-card {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius);
+    }
+
+    .trainer-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .trainer-card p {
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .trainer-card ul {
+      padding-left: 20px;
+      color: #e2e8f0;
+    }
+
+    .about-initiative {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-initiative h2 {
+      color: var(--secondary);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-initiative p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .cta {
+      padding: 75px 0;
+      text-align: center;
+      background: #eff6ff;
+    }
+
+    .cta h2 {
+      color: var(--secondary);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .whatsapp-message {
+      max-width: 680px;
+      margin: 30px auto 0;
+      padding: 22px;
+      text-align: left;
+      color: var(--text);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .whatsapp-message strong {
+      display: block;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer {
+      padding: 38px 0;
+      color: #cbd5e1;
+      text-align: center;
+      background: #020617;
+    }
+
+    footer h3 {
+      color: var(--white);
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    footer .footer-initiative {
+      color: #60a5fa;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-content,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid,
+      .feature-grid,
+      .opportunity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        min-height: 70px;
+      }
+
+      .header-link {
+        display: none;
+      }
+
+      .brand h1 {
+        font-size: 1.25rem;
+      }
+
+      .initiative {
+        font-size: 0.68rem;
+      }
+
+      .header-actions .btn {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+      }
+
+      .hero h2 {
+        font-size: 3rem;
+      }
+
+      .hero-card,
+      .card,
+      .list-card,
+      .trainer-card {
+        padding: 24px;
+      }
+
+      .benefit-grid,
+      .feature-grid,
+      .opportunity-grid,
+      .assessment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="brand">
+        <h1>QACommunity</h1>
+        <p class="initiative">An OpenEd Labs Initiative</p>
+      </a>
+
+      <div class="header-actions">
+        <a href="#opportunities" class="header-link">Opportunities</a>
+
+        <a
+          href="https://wa.me/919625188625?text=QA%20Community%20Registration"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Register — ₹100
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div>
+          <p class="eyebrow">Software Testing • QA • SDET</p>
+
+          <h2>
+            Learn.<br />
+            <span>Test.</span><br />
+            Grow.
+          </h2>
+
+          <p class="hero-description">
+            A focused community for QA Engineers, Software Testers,
+            Automation Professionals, Aspiring Testers, and QA Trainers.
+          </p>
+
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/919625188625?text=QA%20Community%20Registration"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Register via WhatsApp
+            </a>
+
+            <a href="#opportunities" class="btn btn-outline">
+              Explore Opportunities
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>More than a community.</h3>
+
+          <ul>
+            <li>Practical QA learning</li>
+            <li>Real-world testing discussions</li>
+            <li>Peer networking and collaboration</li>
+            <li>Remote and onsite training opportunities</li>
+            <li>Professional growth for QA Trainers</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Become a Member -->
+    <section id="benefits">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Membership Benefits</p>
+          <h2>Why become a member?</h2>
+          <p>
+            Join a committed network where members can learn, contribute,
+            teach, collaborate, and grow in the software testing domain.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+
+          <article class="card">
+            <span class="card-number">01</span>
+            <h3>Practical Learning</h3>
+            <p>
+              Discuss real-world testing situations, testing techniques,
+              tools, processes, and QA challenges.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">02</span>
+            <h3>Career Development</h3>
+            <p>
+              Take part in interview preparation, mock discussions,
+              mentorship, and career-focused activities.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">03</span>
+            <h3>Professional Network</h3>
+            <p>
+              Connect with testers, QA Engineers, SDETs, learners,
+              trainers, and industry professionals.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">04</span>
+            <h3>Knowledge Sharing</h3>
+            <p>
+              Share your experience, publish useful content, and learn from
+              the practical experiences of other members.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">05</span>
+            <h3>Project Collaboration</h3>
+            <p>
+              Participate in testing exercises, case studies, workshops,
+              and collaborative QA initiatives.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">06</span>
+            <h3>Trainer Visibility</h3>
+            <p>
+              Qualified QA professionals may get opportunities to conduct
+              remote or onsite training sessions.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ways to Grow -->
+    <section class="light-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Built for Growth</p>
+          <h2>Two ways to grow with us.</h2>
+          <p>
+            Whether you want to improve your QA skills or share your
+            expertise, this community is designed to support your journey.
+          </p>
+        </div>
+
+        <div class="two-column">
+
+          <div class="list-card">
+            <h3>For QA Learners &amp; Professionals</h3>
+
+            <ul class="check-list">
+              <li>Learn software testing fundamentals and advanced concepts</li>
+              <li>Work on practical testing scenarios</li>
+              <li>Improve test case and defect-reporting skills</li>
+              <li>Prepare for QA interviews and assessments</li>
+              <li>Connect with experienced testing professionals</li>
+            </ul>
+          </div>
+
+          <div class="list-card">
+            <h3>For QA Trainers</h3>
+
+            <ul class="check-list">
+              <li>Showcase your QA knowledge and training experience</li>
+              <li>Participate in knowledge-sharing sessions</li>
+              <li>Explore remote training opportunities</li>
+              <li>Explore onsite training opportunities</li>
+              <li>Collaborate on workshops and learning programs</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility and Assessment -->
+    <section id="registration">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Registration Process</p>
+          <h2>Simple eligibility process.</h2>
+          <p>
+            Membership is based on a written subjective assessment designed
+            to understand your interest and knowledge in software testing.
+          </p>
+        </div>
+
+        <div class="fee-box">
+          <p>Registration &amp; Assessment Fee</p>
+          <div class="amount">₹100</div>
+          <p>Nominal and accessible</p>
+        </div>
+
+        <div class="section-heading">
+          <h2>What the assessment may include</h2>
+        </div>
+
+        <div class="assessment-grid">
+          <div class="assessment-item">Software testing fundamentals</div>
+          <div class="assessment-item">Test case and test scenario design</div>
+          <div class="assessment-item">Defect life cycle and bug reporting</div>
+          <div class="assessment-item">Testing methodologies and approaches</div>
+          <div class="assessment-item">Real-world QA situations</div>
+          <div class="assessment-item">Basic automation testing concepts</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainer Opportunities -->
+    <section id="opportunities" class="trainer-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">For Experienced QA Professionals</p>
+          <h2>Turn your experience into impact.</h2>
+          <p>
+            If you are an experienced QA Engineer or Software Testing Trainer,
+            this community can help you connect with learners and participate
+            in future online or onsite training initiatives.
+          </p>
+        </div>
+
+        <div class="opportunity-grid">
+
+          <div class="trainer-card">
+            <h3>Training Opportunities</h3>
+            <p>
+              Share your expertise through practical learning programs
+              designed for aspiring and working QA professionals.
+            </p>
+            <ul>
+              <li>Remote training sessions</li>
+              <li>Onsite workshops</li>
+              <li>Practical QA programs</li>
+            </ul>
+          </div>
+
+          <div class="trainer-card">
+            <h3>Mentorship &amp; Knowledge Sharing</h3>
+            <p>
+              Help members build confidence and improve their understanding
+              of software testing and quality assurance.
+            </p>
+            <ul>
+              <li>Mentorship sessions</li>
+              <li>Interview preparation</li>
+              <li>Knowledge-sharing events</li>
+            </ul>
+          </div>
+
+          <div class="trainer-card">
+            <h3>Opportunity Conditions</h3>
+            <p>
+              Opportunities will depend on several factors, including:
+            </p>
+            <ul>
+              <li>Your experience and subject expertise</li>
+              <li>Your availability</li>
+              <li>Training requirements</li>
+              <li>Community initiatives</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About OpenEd Labs -->
+    <section>
+      <div class="container">
+        <div class="about-initiative">
+          <p class="eyebrow">OpenEd Labs</p>
+          <h2>An initiative for practical learning and professional growth.</h2>
+
+          <p>
+            QACommunity is an initiative by OpenEd Labs, created to support
+            practical learning, knowledge sharing, professional networking,
+            and career development in software testing and quality assurance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to be part of the QA movement?</h2>
+
+        <p>
+          Take the first step toward learning, networking, teaching,
+          and growing in the software testing ecosystem.
+        </p>
+
+        <a
+          href="https://wa.me/919625188625?text=QA%20Community%20Registration"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Register via WhatsApp
+        </a>
+
+        <div class="whatsapp-message">
+          <strong>Send the following message on WhatsApp:</strong>
+          Hello, I am interested in joining the QA &amp; Software Testing
+          Community.
+        </div>
+
+        <p class="notice">
+          The ₹100 fee is for registration and assessment evaluation.
+          Payment does not guarantee selection or community membership.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3>QACommunity</h3>
+      <p class="footer-initiative">An OpenEd Labs Initiative</p>
+      <p>Software Testing • Quality Assurance • Training</p>
+      <p>
+        WhatsApp us at:
+        <a href="tel:+919625188625">+91 96251 88625</a>
+      </p>
+      <p>&copy; 2026 OpenEd Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
