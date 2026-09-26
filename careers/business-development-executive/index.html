@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<title>
+    Freelance Business Development Executive | openEd Labs
+</title>
+
+<meta
+name="description"
+content="Join openEd Labs as a Freelance Business Development Executive. Help expand our training programs, build institutional relationships, generate leads and grow our client base."
+
+>
+
+<style>
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --primary: #6c63ff;
+    --primary-dark: #5148d8;
+
+    --cyan: #00d4ff;
+
+    --dark: #101321;
+    --dark-light: #1b2040;
+
+    --text: #252a40;
+    --muted: #6b7388;
+
+    --light: #f7f8fc;
+    --white: #ffffff;
+
+    --border: #e5e7f0;
+
+    --green: #15936d;
+
+    --radius: 18px;
+
+    --shadow:
+        0 18px 45px rgba(28, 34, 70, 0.10);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border: 2px solid transparent;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.25s ease;
+
+    cursor: pointer;
+}
+
+.btn-primary {
+
+    color: var(--white);
+
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+
+    color: var(--white);
+
+    border-color: rgba(255,255,255,0.45);
+}
+
+.btn-outline:hover {
+
+    color: var(--dark);
+
+    background: var(--white);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+
+    color: var(--dark);
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
+
+    color: #555d73;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.nav-links a {
+
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+
+    color: var(--primary);
+}
+
+.nav-apply {
+
+    padding: 9px 17px;
+
+    border-radius: 999px;
+
+    color: var(--white) !important;
+
+    background: var(--primary);
+}
+
+.nav-apply:hover {
+
+    color: var(--white) !important;
+
+    background: var(--primary-dark);
+}
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--dark);
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 110px 0 125px;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,212,255,0.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(108,99,255,0.30),
+            transparent 33%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--dark),
+            var(--dark-light)
+        );
+}
+
+.hero::before {
+
+    content: "</>";
+
+    position: absolute;
+
+    right: 7%;
+
+    bottom: 2%;
+
+    color: rgba(255,255,255,0.05);
+
+    font-size: 180px;
+
+    font-weight: bold;
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 820px;
+}
+
+.hero-label {
+
+    margin-bottom: 15px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+
+    max-width: 820px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero-description {
+
+    max-width: 730px;
+
+    margin-bottom: 34px;
+
+    color: #c9cee2;
+
+    font-size: 18px;
+}
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   ROLE SNAPSHOT
+========================= */
+
+.role-snapshot {
+
+    margin-top: -55px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.snapshot-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.snapshot {
+
+    padding: 25px 22px;
+
+    border-right: 1px solid var(--border);
+}
+
+.snapshot:last-child {
+    border-right: none;
+}
+
+.snapshot strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+}
+
+.snapshot span {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    padding: 100px 0 85px;
+}
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.section-label {
+
+    margin-bottom: 12px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.section-title {
+
+    margin-bottom: 17px;
+
+    color: var(--dark);
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    line-height: 1.15;
+}
+
+.intro-text p {
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.intro-card {
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(108,99,255,0.95),
+            rgba(0,180,215,0.90)
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.intro-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 28px;
+}
+
+.intro-card p {
+
+    color: #eefcff;
+}
+
+.intro-card ul {
+
+    margin-top: 20px;
+
+    padding-left: 20px;
+
+    color: #eefcff;
+}
+
+.intro-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   RESPONSIBILITIES
+========================= */
+
+.responsibilities {
+
+    padding: 95px 0;
+
+    background: var(--light);
+}
+
+.section-heading {
+
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.section-heading .section-text {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+.responsibility-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.responsibility-card {
+
+    position: relative;
+
+    padding: 32px 26px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    transition: 0.25s ease;
+}
+
+.responsibility-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--cyan)
+        );
+}
+
+.responsibility-card:hover {
+
+    box-shadow: var(--shadow);
+
+    transform: translateY(-6px);
+}
+
+.responsibility-number {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    color: var(--white);
+
+    background: var(--primary);
+
+    font-weight: bold;
+}
+
+.responsibility-card h3 {
+
+    margin-bottom: 9px;
+
+    color: var(--dark);
+
+    font-size: 21px;
+}
+
+.responsibility-card p {
+
+    color: var(--muted);
+
+    font-size: 14.5px;
+}
+
+
+/* =========================
+   WHO SHOULD APPLY
+========================= */
+
+.profile {
+
+    padding: 95px 0;
+}
+
+.profile-grid {
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.profile-card {
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    transition: 0.25s ease;
+}
+
+.profile-card:hover {
+
+    box-shadow: var(--shadow);
+
+    transform: translateY(-3px);
+}
+
+.profile-check {
+
+    width: 28px;
+
+    height: 28px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--green);
+
+    background: #dff8ef;
+
+    font-weight: bold;
+}
+
+.profile-card h3 {
+
+    margin-bottom: 4px;
+
+    color: var(--dark);
+
+    font-size: 17px;
+}
+
+.profile-card p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   COMPENSATION
+========================= */
+
+.compensation {
+
+    padding: 95px 0;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(108,99,255,0.25),
+            transparent 30%
+        ),
+
+        var(--dark);
+}
+
+.compensation .section-label {
+    color: var(--cyan);
+}
+
+.compensation .section-title {
+    color: var(--white);
+}
+
+.compensation-intro {
+
+    max-width: 700px;
+
+    color: #c2c8dc;
+
+    font-size: 17px;
+}
+
+.compensation-grid {
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 22px;
+}
+
+.compensation-card {
+
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,0.04);
+}
+
+.compensation-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 19px;
+}
+
+.amount {
+
+    margin-bottom: 8px;
+
+    color: var(--cyan);
+
+    font-size: 42px;
+
+    font-weight: 800;
+}
+
+.compensation-card p {
+
+    color: #b8bfd4;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   WORKING MODEL
+========================= */
+
+.working-model {
+
+    padding: 95px 0;
+}
+
+.process-grid {
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.process-card {
+
+    padding: 28px 22px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+}
+
+.process-number {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin: 0 auto 17px;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: var(--primary);
+
+    font-weight: bold;
+}
+
+.process-card h3 {
+
+    margin-bottom: 8px;
+
+    color: var(--dark);
+
+    font-size: 17px;
+}
+
+.process-card p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+
+    padding: 95px 0;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+}
+
+.cta-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.cta h2 {
+
+    max-width: 650px;
+
+    margin-bottom: 14px;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    line-height: 1.15;
+}
+
+.cta p {
+
+    max-width: 650px;
+
+    color: #e7e8ff;
+}
+
+.cta .btn-primary {
+
+    flex: 0 0 auto;
+
+    color: var(--dark);
+
+    background: var(--white);
+}
+
+.cta .btn-primary:hover {
+
+    background: #f0f1ff;
+}
+
+
+/* =========================
+   APPLICATION DETAILS
+========================= */
+
+.application {
+
+    padding: 70px 0;
+
+    background: var(--light);
+}
+
+.application-box {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 22px;
+}
+
+.application-card {
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: 0 8px 30px rgba(28,34,70,0.05);
+}
+
+.application-card h3 {
+
+    margin-bottom: 10px;
+
+    color: var(--dark);
+}
+
+.application-card p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.application-card a {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: var(--primary);
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 27px 0;
+
+    color: #abb2c9;
+
+    background: #0b0e1a;
+
+    font-size: 13px;
+}
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-brand {
+
+    color: var(--white);
+
+    font-weight: bold;
+}
+
+.footer-links {
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .snapshot-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .snapshot {
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .responsibility-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .process-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 12px 4%;
+
+        border-bottom: 1px solid var(--border);
+
+        background: var(--white);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 0;
+    }
+
+    .nav-apply {
+
+        width: auto !important;
+
+        padding: 9px 17px !important;
+    }
+
+    .hero {
+
+        padding: 75px 0 100px;
+    }
+
+    .hero h1 {
+
+        letter-spacing: -1px;
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .snapshot-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .snapshot {
+
+        border-right: none;
+    }
+
+    .responsibility-grid,
+    .profile-grid,
+    .compensation-grid,
+    .application-box {
+
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .cta-inner {
+
+        display: block;
+    }
+
+    .cta .btn {
+
+        width: auto;
+
+        margin-top: 25px;
+    }
+
+    .footer-inner {
+
+        display: block;
+
+        text-align: center;
+    }
+
+    .footer-links {
+
+        justify-content: center;
+
+        margin-top: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+    .intro-card {
+
+        padding: 30px;
+    }
+
+    .compensation-card {
+
+        padding: 28px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+```
+<div class="container nav-inner">
+
+    <a href="/" class="logo">
+        openEd <span>Labs</span>
+    </a>
+
+    <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+    >
+        ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="/">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#role" class="active">
+                Careers
+            </a>
+        </li>
+
+        <li>
+            <a href="#responsibilities">
+                Role
+            </a>
+        </li>
+
+        <li>
+            <a href="#apply" class="nav-apply">
+                Apply Now
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+```
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="role">
+
+```
+<div class="container">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Careers at openEd Labs
+        </div>
+
+        <h1>
+            Help us grow the
+            <span>learning ecosystem.</span>
+        </h1>
+
+        <p class="hero-description">
+            Join openEd Labs as a Freelance Business Development
+            Executive and help us expand our client base, build
+            institutional relationships and connect more learners
+            with practical technical education.
+        </p>
+
+        <div class="hero-actions">
+
+            <a
+                href="#apply"
+                class="btn btn-primary"
+            >
+                Apply for this Role
+            </a>
+
+            <a
+                href="#responsibilities"
+                class="btn btn-outline"
+            >
+                Explore the Role
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     ROLE SNAPSHOT
+========================= -->
+
+<div class="role-snapshot">
+
+```
+<div class="container">
+
+    <div class="snapshot-grid">
+
+        <div class="snapshot">
+
+            <strong>
+                Freelance
+            </strong>
+
+            <span>
+                Part-time & flexible
+            </span>
+
+        </div>
+
+        <div class="snapshot">
+
+            <strong>
+                ₹10,000
+            </strong>
+
+            <span>
+                Fixed monthly payment
+            </span>
+
+        </div>
+
+        <div class="snapshot">
+
+            <strong>
+                Incentives
+            </strong>
+
+            <span>
+                Performance-based
+            </span>
+
+        </div>
+
+        <div class="snapshot">
+
+            <strong>
+                Flexible
+            </strong>
+
+            <span>
+                Remote working model
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+```
+<div class="container">
+
+    <div class="intro-grid">
+
+        <div class="intro-text">
+
+            <div class="section-label">
+                The Opportunity
+            </div>
+
+            <h2 class="section-title">
+                Business development with a purpose.
+            </h2>
+
+            <p>
+                openEd Labs works across Programming,
+                Computer Science, Generative AI, emerging
+                technologies and professional technical
+                education.
+            </p>
+
+            <p>
+                We are looking for an independent business
+                development professional who can help connect
+                our offerings with schools, colleges,
+                organisations and other potential clients.
+            </p>
+
+            <p>
+                This is a client-facing growth role focused on
+                identifying opportunities, starting conversations,
+                developing relationships and supporting conversions.
+            </p>
+
+        </div>
+
+
+        <div class="intro-card">
+
+            <h3>
+                Your mission
+            </h3>
+
+            <p>
+                Help openEd Labs reach more institutions,
+                organisations and learners.
+            </p>
+
+            <ul>
+
+                <li>
+                    Generate qualified leads
+                </li>
+
+                <li>
+                    Build new professional relationships
+                </li>
+
+                <li>
+                    Promote relevant openEd Labs offerings
+                </li>
+
+                <li>
+                    Develop institutional opportunities
+                </li>
+
+                <li>
+                    Support client conversion and growth
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     RESPONSIBILITIES
+========================= -->
+
+<section
+    class="responsibilities"
+    id="responsibilities"
+>
+
+```
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            What You Will Do
+        </div>
+
+        <h2 class="section-title">
+            Your role in our growth.
+        </h2>
+
+        <p class="section-text">
+            You will work independently while collaborating
+            with the openEd Labs team to identify, develop
+            and convert new business opportunities.
+        </p>
+
+    </div>
+
+
+    <div class="responsibility-grid">
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                01
+            </div>
+
+            <h3>
+                Lead Generation
+            </h3>
+
+            <p>
+                Research and identify potential schools,
+                colleges, training institutes, organisations
+                and other relevant prospects.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                02
+            </div>
+
+            <h3>
+                Outreach
+            </h3>
+
+            <p>
+                Initiate professional conversations through
+                email, phone, LinkedIn, WhatsApp and other
+                appropriate communication channels.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                03
+            </div>
+
+            <h3>
+                Program Promotion
+            </h3>
+
+            <p>
+                Introduce prospects to relevant openEd Labs
+                training programs, technical education and
+                professional learning opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                04
+            </div>
+
+            <h3>
+                Institutional Outreach
+            </h3>
+
+            <p>
+                Connect with academic decision-makers,
+                training coordinators, HR teams and
+                organisational contacts.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                05
+            </div>
+
+            <h3>
+                Relationship Building
+            </h3>
+
+            <p>
+                Develop professional relationships with
+                prospects and maintain communication throughout
+                the business development process.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div class="responsibility-number">
+                06
+            </div>
+
+            <h3>
+                Conversion & Follow-up
+            </h3>
+
+            <p>
+                Follow up with qualified prospects and help
+                convert opportunities into training engagements,
+                collaborations or service requirements.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     WHO SHOULD APPLY
+========================= -->
+
+<section class="profile">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            Who We Are Looking For
+        </div>
+
+        <h2 class="section-title">
+            You could be a good fit if you...
+        </h2>
+
+        <p class="section-text">
+            We are looking for people who can communicate
+            confidently, work independently and consistently
+            create new business conversations.
+        </p>
+
+    </div>
+
+
+    <div class="profile-grid">
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Communicate confidently
+                </h3>
+
+                <p>
+                    Comfortable speaking with institutions,
+                    professionals and decision-makers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Enjoy networking
+                </h3>
+
+                <p>
+                    Interested in building new professional
+                    relationships and expanding your network.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Work independently
+                </h3>
+
+                <p>
+                    Able to plan outreach, manage follow-ups
+                    and maintain your own pipeline.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Stay target-oriented
+                </h3>
+
+                <p>
+                    Comfortable working toward clear and
+                    achievable monthly objectives.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Understand digital communication
+                </h3>
+
+                <p>
+                    Familiar with email, LinkedIn, WhatsApp
+                    and other online communication channels.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-check">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Have sales or outreach experience
+                </h3>
+
+                <p>
+                    Experience in sales, education, business
+                    development or client acquisition is useful.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     COMPENSATION
+========================= -->
+
+<section class="compensation">
+
+```
+<div class="container">
+
+    <div class="section-label">
+        Compensation
+    </div>
+
+    <h2 class="section-title">
+        Flexible work. Clear earning opportunity.
+    </h2>
+
+    <p class="compensation-intro">
+        The role is designed for professionals who want to
+        work independently while building a business-development
+        relationship with openEd Labs.
+    </p>
+
+
+    <div class="compensation-grid">
+
+
+        <div class="compensation-card">
+
+            <h3>
+                Fixed Monthly Payment
+            </h3>
+
+            <div class="amount">
+                ₹10,000
+            </div>
+
+            <p>
+                Fixed monthly payment for the role, subject
+                to the agreed engagement terms and monthly
+                performance expectations.
+            </p>
+
+        </div>
+
+
+        <div class="compensation-card">
+
+            <h3>
+                Performance Incentives
+            </h3>
+
+            <div class="amount">
+                Uncapped
+            </div>
+
+            <p>
+                Additional incentives may be earned based on
+                successful business development and conversions
+                according to the applicable incentive structure.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     WORKING MODEL
+========================= -->
+
+<section class="working-model">
+
+```
+<div class="container">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            Working Model
+        </div>
+
+        <h2 class="section-title">
+            Designed around flexibility.
+        </h2>
+
+        <p class="section-text">
+            Build your own pipeline, manage your outreach
+            and work with the openEd Labs team as opportunities
+            develop.
+        </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <h3>
+                Identify
+            </h3>
+
+            <p>
+                Find relevant institutions, organisations
+                and potential clients.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <h3>
+                Connect
+            </h3>
+
+            <p>
+                Start professional conversations and
+                understand their requirements.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <h3>
+                Develop
+            </h3>
+
+            <p>
+                Maintain follow-ups and develop qualified
+                business opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <h3>
+                Convert
+            </h3>
+
+            <p>
+                Help turn suitable opportunities into
+                openEd Labs engagements.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     APPLY CTA
+========================= -->
+
+<section class="cta" id="apply">
+
+```
+<div class="container">
+
+    <div class="cta-inner">
+
+        <div>
+
+            <div class="hero-label">
+                Applications Open
+            </div>
+
+            <h2>
+                Ready to help openEd Labs grow?
+            </h2>
+
+            <p>
+                Send us a brief introduction about yourself,
+                your relevant experience, your location and
+                why you are interested in this opportunity.
+            </p>
+
+        </div>
+
+        <a
+            href="mailto:openedlabs@gmail.com?subject=Application%20-%20Freelance%20Business%20Development%20Executive"
+            class="btn btn-primary"
+        >
+            Apply via Email
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     APPLICATION DETAILS
+========================= -->
+
+<section class="application">
+
+```
+<div class="container">
+
+    <div class="application-box">
+
+
+        <div class="application-card">
+
+            <h3>
+                Email Your Proposal
+            </h3>
+
+            <p>
+                Introduce yourself, mention your experience
+                and tell us how you can contribute to business
+                development at openEd Labs.
+            </p>
+
+            <a href="mailto:openedlabs@gmail.com">
+                openedlabs@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="application-card">
+
+            <h3>
+                Quick Enquiries
+            </h3>
+
+            <p>
+                For questions about the role or the working
+                model, contact the openEd Labs team directly.
+            </p>
+
+            <a href="tel:+919625188625">
+                +91 9625188625
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+```
+<div class="container footer-inner">
+
+    <div>
+
+        <span class="footer-brand">
+            openEd Labs
+        </span>
+
+        <br>
+
+        Technical Education • Programming • Generative AI
+        • Professional Learning
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="#apply">
+            Careers
+        </a>
+
+        <a href="mailto:openedlabs@gmail.com">
+            Contact
+        </a>
+
+    </div>
+
+</div>
+```
+
+</footer>
+
+<script>
+
+function toggleMenu() {
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+
+</html>
