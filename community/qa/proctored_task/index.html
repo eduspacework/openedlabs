@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>QACommunity Practical Assignment</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --success: #15803d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: auto;
+    }
+
+    /* Login Screen */
+
+    .login-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #0f172a, #2563eb);
+    }
+
+    .login-box {
+      width: min(420px, 100%);
+      padding: 35px;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .login-brand {
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .login-box h2 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .login-description {
+      margin-bottom: 25px;
+      color: var(--muted);
+    }
+
+    .login-box label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-box input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .login-box button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      color: var(--white);
+      background: var(--primary);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: var(--primary-dark);
+    }
+
+    .login-error {
+      min-height: 22px;
+      margin-top: 14px;
+      color: var(--danger);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Protected Content */
+
+    .protected-content {
+      display: none;
+    }
+
+    header {
+      padding: 70px 20px;
+      color: var(--white);
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a, #2563eb);
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    header p {
+      color: #dbeafe;
+      font-size: 1.1rem;
+    }
+
+    .initiative {
+      margin-bottom: 18px;
+      color: #93c5fd;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding: 50px 0;
+    }
+
+    .card {
+      margin-bottom: 25px;
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: var(--dark);
+      font-size: 1.5rem;
+    }
+
+    .card h3 {
+      margin: 24px 0 12px;
+      color: var(--dark);
+    }
+
+    .card p {
+      margin-bottom: 15px;
+    }
+
+    ul,
+    ol {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      position: relative;
+      padding: 15px 15px 15px 55px;
+      background: #eff6ff;
+      border-radius: 10px;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 15px;
+      top: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .submission-list li::marker {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .format-box {
+      padding: 20px;
+      color: #e2e8f0;
+      background: var(--dark);
+      border-radius: 10px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      line-height: 1.8;
+    }
+
+    .note {
+      padding: 18px;
+      color: #1e3a8a;
+      background: #dbeafe;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+    }
+
+    .important {
+      padding: 18px;
+      color: #14532d;
+      background: #dcfce7;
+      border-left: 4px solid var(--success);
+      border-radius: 8px;
+    }
+
+    .website-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      color: var(--white);
+      background: var(--primary);
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .website-link:hover {
+      background: var(--primary-dark);
+    }
+
+    footer {
+      padding: 30px 20px;
+      color: #cbd5e1;
+      text-align: center;
+      background: var(--dark);
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 600px) {
+      .card,
+      .login-box {
+        padding: 22px;
+      }
+
+      header {
+        padding: 55px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <p class="login-brand">QACommunity</p>
+
+      <h2>Member Access</h2>
+
+      <p class="login-description">
+        Enter your username and password to view the assignment.
+      </p>
+
+      <form id="loginForm">
+        <label for="username">Username</label>
+
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your username"
+          autocomplete="username"
+          required
+        />
+
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        />
+
+        <button type="submit">
+          Access Assignment
+        </button>
+
+        <p id="loginError" class="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Protected Assignment Content -->
+  <div id="protectedContent" class="protected-content">
+
+    <header>
+      <div class="container">
+        <p class="initiative">
+          QACommunity • An OpenEd Labs Initiative
+        </p>
+
+        <h1>Practical QA Assignment</h1>
+
+        <p>Test the QACommunity Login Page</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <!-- Overview -->
+        <section class="card">
+          <h2>Assignment Objective</h2>
+
+          <p>
+            Test the actual QACommunity login page and demonstrate your ability
+            to observe, think, document, and explain your testing decisions.
+          </p>
+
+          <p>
+            Do not submit only theoretical definitions. You must perform
+            practical testing and record your actual observations.
+          </p>
+        </section>
+
+        <!-- Instructions -->
+        <section class="card">
+          <h2>Instructions</h2>
+
+          <ol class="steps">
+            <li>
+              Choose your own username.
+            </li>
+
+            <li>
+              Calculate the expected password based on the login rule.
+            </li>
+
+            <li>
+              Try to log in using different valid and invalid inputs.
+            </li>
+
+            <li>
+              Record what actually happens for each test.
+            </li>
+
+            <li>
+              Identify at least one unexpected behavior, usability issue,
+              or possible improvement.
+            </li>
+
+            <li>
+              Explain why you selected that issue as important.
+            </li>
+
+            <li>
+              Suggest one practical solution for the issue.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Test Cases -->
+        <section class="card">
+          <h2>Minimum Tests to Perform</h2>
+
+          <ul>
+            <li>Correct username and correct password</li>
+            <li>Correct username and incorrect password</li>
+            <li>Empty username</li>
+            <li>Empty password</li>
+            <li>Username containing spaces</li>
+          </ul>
+
+          <p class="note">
+            You may perform additional tests if you notice other possible
+            issues or interesting behavior.
+          </p>
+        </section>
+
+        <!-- Test Result Format -->
+        <section class="card">
+          <h2>Test Result Format</h2>
+
+          <div class="format-box">Test Scenario:
+Test Data:
+Expected Result:
+Actual Result:
+Pass/Fail:
+Reason:</div>
+        </section>
+
+        <!-- Submission Requirements -->
+        <section class="card">
+          <h2>Submission Requirements</h2>
+
+          <ul class="submission-list">
+            <li>Screenshot of one successful test</li>
+            <li>Screenshot of one failed test</li>
+            <li>Five test scenarios</li>
+            <li>One completed test case</li>
+            <li>One bug report</li>
+            <li>A short explanation of your most important finding</li>
+          </ul>
+        </section>
+
+        <!-- Questions -->
+        <section class="card">
+          <h2>Questions to Answer</h2>
+
+          <ol>
+            <li>
+              What did you test first, and why?
+            </li>
+
+            <li>
+              Which test was the most important?
+            </li>
+
+            <li>
+              What problem did you find?
+            </li>
+
+            <li>
+              How would you improve the login page?
+            </li>
+
+            <li>
+              What additional test would you perform if you had more time?
+            </li>
+          </ol>
+        </section>
+
+        <!-- Important Requirement -->
+        <section class="card">
+          <h2>Important Requirement</h2>
+
+          <p class="important">
+            Each participant must use a different username and include their
+            username in the submission. Answers that only contain general
+            definitions without actual testing evidence may not be accepted.
+          </p>
+
+          <p>
+            AI tools may be used for formatting or language improvement, but
+            the screenshots, test results, observations, and reasoning must be
+            based on your own testing.
+          </p>
+        </section>
+
+        <!-- Website -->
+        <section class="card">
+          <h2>QACommunity Website</h2>
+
+          <p>
+            Visit the official QACommunity page for more information.
+          </p>
+
+          <a
+            class="website-link"
+            href="https://openedlabs.eduspace.work/community/qa/"
+            target="_blank"
+            rel="noopener"
+          >
+            Visit QACommunity
+          </a>
+        </section>
+
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>QACommunity</strong></p>
+      <p>Software Testing • Quality Assurance • Training</p>
+      <p>An OpenEd Labs Initiative</p>
+    </footer>
+
+  </div>
+
+  <!-- Login Script -->
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const loginScreen = document.getElementById("loginScreen");
+    const protectedContent = document.getElementById("protectedContent");
+    const loginError = document.getElementById("loginError");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document
+        .getElementById("username")
+        .value
+        .trim();
+
+      const enteredPassword = document
+        .getElementById("password")
+        .value;
+
+      const reversedUsername = username
+        .split("")
+        .reverse()
+        .join("");
+
+      const correctPassword = reversedUsername + "26@123";
+
+      if (enteredPassword === correctPassword) {
+        loginScreen.style.display = "none";
+        protectedContent.style.display = "block";
+        loginError.textContent = "";
+      } else {
+        loginError.textContent =
+          "Incorrect username or password.";
+      }
+    });
+  </script>
+
+</body>
+</html>
