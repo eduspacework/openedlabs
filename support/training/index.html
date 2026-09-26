@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Professional Services | openEd Labs</title>
+  <meta
+    name="description"
+    content="Customized technology training, workshops, consulting, and capacity-building programs by openEd Labs."
+  />
+
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --primary-dark: #5148d8;
+      --secondary: #00d4ff;
+      --dark: #101321;
+      --dark-light: #171b2e;
+      --text: #24283b;
+      --muted: #687086;
+      --light: #f7f8fc;
+      --white: #ffffff;
+      --border: #e7e9f2;
+      --success: #20b486;
+      --shadow: 0 18px 50px rgba(25, 29, 55, 0.1);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 23px;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      color: var(--dark);
+      font-size: clamp(28px, 4vw, 43px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      max-width: 690px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      color: var(--dark);
+      font-size: 23px;
+      font-weight: 850;
+      letter-spacing: -0.6px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+      color: #4c5369;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 115px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.2), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(108, 99, 255, 0.32), transparent 32%),
+        linear-gradient(135deg, #101321 0%, #1a1f3d 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -180px;
+      bottom: -220px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(255, 255, 255, 0.025),
+        0 0 0 70px rgba(255, 255, 255, 0.025);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 span {
+      color: var(--secondary);
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: #ccd1e7;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Intro */
+    .intro {
+      padding: 95px 0 70px;
+      text-align: center;
+    }
+
+    /* Services */
+    .services {
+      padding: 45px 0 100px;
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .service-card {
+      padding: 30px 26px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 25px rgba(32, 37, 68, 0.04);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(108, 99, 255, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 21px;
+      border-radius: 15px;
+      color: var(--primary);
+      background: #eeedff;
+      font-size: 25px;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      font-size: 19px;
+      margin-bottom: 11px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 16px;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: #555d73;
+      font-size: 14px;
+    }
+
+    .service-card li {
+      margin-bottom: 5px;
+    }
+
+    /* Process */
+    .process {
+      padding: 100px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      margin-top: 48px;
+    }
+
+    .process-step {
+      position: relative;
+      text-align: center;
+    }
+
+    .process-number {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 17px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: calc(50% + 35px);
+      width: calc(100% - 50px);
+      height: 2px;
+      background: #dcdff0;
+    }
+
+    .process-step h3 {
+      color: var(--dark);
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 0 5px;
+    }
+
+    /* Features */
+    .features {
+      padding: 90px 0;
+      background: var(--light);
+    }
+
+    .feature-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .feature-layout .section-title {
+      margin-bottom: 20px;
+    }
+
+    .feature-text > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      color: #4d566e;
+      font-size: 14px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #dff8ef;
+      color: var(--success);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .feature-box {
+      min-height: 310px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 35px;
+      border-radius: 25px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(108, 99, 255, 0.95), rgba(0, 170, 205, 0.9)),
+        var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-box::before,
+    .feature-box::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+    }
+
+    .feature-box::before {
+      width: 350px;
+      height: 350px;
+    }
+
+    .feature-box::after {
+      width: 210px;
+      height: 210px;
+    }
+
+    .feature-box-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .feature-box h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      max-width: 330px;
+      color: #e8faff;
+    }
+
+    /* Contact CTA */
+    .cta {
+      padding: 95px 0;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .cta h2 {
+      max-width: 580px;
+      font-size: clamp(29px, 4vw, 45px);
+      line-height: 1.15;
+      margin-bottom: 13px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      color: #bcc2da;
+    }
+
+    .cta .btn {
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      padding: 27px 0;
+      color: #aeb5cd;
+      background: #0b0e1a;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 35px;
+      }
+
+      .process-step:nth-child(3)::after {
+        display: none;
+      }
+
+      .feature-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        min-height: 65px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px 4%;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 0;
+      }
+
+      .hero {
+        padding: 75px 0 85px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-step:nth-child(3)::after {
+        display: block;
+      }
+
+      .process-step:nth-child(even)::after {
+        display: none;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 25px;
+      }
+
+      .footer-inner {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step::after {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">openEd<span>Labs</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="#services" class="active">Professional Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="section-label" style="color: #00d4ff;">
+            Professional Services
+          </p>
+
+          <h1>
+            Build skills.<br />
+            Strengthen teams.<br />
+            <span>Create impact.</span>
+          </h1>
+
+          <p>
+            We deliver customized technology training, workshops, consulting,
+            and capacity-building programs for institutions, businesses, and
+            government organizations.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Request a Consultation →
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro">
+      <div class="container">
+        <p class="section-label">Technology Enablement</p>
+
+        <h2 class="section-title">
+          Practical learning designed around your needs
+        </h2>
+
+        <p class="section-description">
+          Every organization has different goals, teams, and challenges.
+          Our professional services are designed to provide practical,
+          flexible, and outcome-focused technology learning experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">What We Offer</p>
+
+          <h2 class="section-title">
+            Services built for real-world impact
+          </h2>
+
+          <p class="section-description">
+            From short workshops to long-term training programs, we help
+            organizations develop technical knowledge and digital capabilities.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-icon">⌘</div>
+            <h3>Customized Technology Training</h3>
+            <p>
+              Structured training programs created around your organization’s
+              goals, audience, schedule, and skill level.
+            </p>
+            <ul>
+              <li>Programming and software development</li>
+              <li>Computer Science fundamentals</li>
+              <li>Generative AI and prompt engineering</li>
+              <li>Data and emerging technologies</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">▣</div>
+            <h3>Corporate Training Programs</h3>
+            <p>
+              Practical employee upskilling programs that help teams adopt
+              technology with confidence.
+            </p>
+            <ul>
+              <li>Employee technology upskilling</li>
+              <li>AI awareness and adoption</li>
+              <li>Programming foundations</li>
+              <li>AI for business teams</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌂</div>
+            <h3>Institutional Training</h3>
+            <p>
+              Technical education programs for schools, colleges, universities,
+              and training institutions.
+            </p>
+            <ul>
+              <li>Student skill-development programs</li>
+              <li>Faculty development</li>
+              <li>Coding and programming programs</li>
+              <li>AI literacy initiatives</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">◈</div>
+            <h3>Government Programs</h3>
+            <p>
+              Requirement-based training and capacity-building initiatives for
+              government departments and public institutions.
+            </p>
+            <ul>
+              <li>Digital skills development</li>
+              <li>Technology awareness programs</li>
+              <li>Workforce capacity building</li>
+              <li>Batch-based training delivery</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Workshops and Seminars</h3>
+            <p>
+              Focused sessions that introduce learners and teams to relevant
+              technical concepts and emerging technologies.
+            </p>
+            <ul>
+              <li>Introduction to Generative AI</li>
+              <li>AI tools for productivity</li>
+              <li>Programming fundamentals</li>
+              <li>Emerging technology awareness</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">☷</div>
+            <h3>Curriculum Design</h3>
+            <p>
+              Support for creating structured, practical, and measurable
+              technology education programs.
+            </p>
+            <ul>
+              <li>Course and curriculum planning</li>
+              <li>Module and session design</li>
+              <li>Assignment and project planning</li>
+              <li>Assessment design</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">How We Work</p>
+
+          <h2 class="section-title">
+            A simple and collaborative process
+          </h2>
+
+          <p class="section-description">
+            We work closely with your team to create a program that matches
+            your objectives, participants, and expected outcomes.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h3>Understand</h3>
+            <p>We learn about your goals, participants, and requirements.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h3>Plan</h3>
+            <p>We recommend the right subject, format, duration, and schedule.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h3>Design</h3>
+            <p>We create the training structure, activities, and assessments.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">04</div>
+            <h3>Deliver</h3>
+            <p>Our instructors conduct practical and interactive sessions.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">05</div>
+            <h3>Evaluate</h3>
+            <p>Participant progress is reviewed through projects or assessments.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">06</div>
+            <h3>Improve</h3>
+            <p>Feedback and outcomes help strengthen future programs.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container feature-layout">
+
+        <div class="feature-text">
+          <p class="section-label">Flexible Engagements</p>
+
+          <h2 class="section-title">
+            Learning programs that fit your organization
+          </h2>
+
+          <p>
+            Our services can be delivered online, offline, or through a hybrid
+            model. Programs can be adapted for students, educators, employees,
+            technical teams, and public-sector participants.
+          </p>
+
+          <ul class="feature-list">
+            <li>Online instructor-led sessions</li>
+            <li>Offline classroom training</li>
+            <li>Hybrid learning programs</li>
+            <li>Short-term workshops</li>
+            <li>Batch-based programs</li>
+            <li>Organization-specific engagements</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-content">
+            <h3>Turn knowledge into capability</h3>
+            <p>
+              Give your teams the practical skills they need to use technology
+              effectively and confidently.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+        <div>
+          <h2>Let’s plan your next learning program.</h2>
+
+          <p>
+            Tell us about your organization, participants, preferred topic,
+            and training objectives. We will help you explore the right
+            professional engagement.
+          </p>
+        </div>
+
+        <!-- Replace the email address with your actual business email -->
+        <a
+          href="mailto:hello@openedlabs.com?subject=Professional Services Enquiry"
+          class="btn btn-primary"
+        >
+          Discuss Your Requirements →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        © <span id="currentYear"></span> openEd Labs. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
