@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Website Design & Development | openEd Labs</title>
+
+  <meta
+    name="description"
+    content="Professional website design and development services by openEd Labs."
+  />
+
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --primary-dark: #5148d8;
+      --cyan: #00d4ff;
+      --dark: #101321;
+      --dark-light: #1b2040;
+      --text: #252a40;
+      --muted: #6b7388;
+      --light: #f7f8fc;
+      --white: #ffffff;
+      --border: #e5e7f0;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(28, 34, 70, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-outline:hover {
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      color: var(--dark);
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 700px;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--dark);
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      color: #555d73;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 120px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.2), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(108, 99, 255, 0.3), transparent 33%),
+        linear-gradient(135deg, var(--dark), var(--dark-light));
+    }
+
+    .hero::before {
+      content: "</>";
+      position: absolute;
+      right: 8%;
+      bottom: 5%;
+      color: rgba(255, 255, 255, 0.07);
+      font-size: 180px;
+      font-weight: bold;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #c9cee2;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Intro */
+
+    .intro {
+      padding: 95px 0 75px;
+    }
+
+    .intro-content {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .intro-text p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .intro-card {
+      padding: 38px;
+      border-radius: 24px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(108, 99, 255, 0.95), rgba(0, 180, 215, 0.9));
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .intro-card p {
+      color: #eefcff;
+    }
+
+    /* Services */
+
+    .services {
+      padding: 90px 0;
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .section-text {
+      margin: auto;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 30px 25px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #c9c5ff;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      color: var(--primary);
+      background: #eeedff;
+      font-size: 25px;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 14px;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: #555d73;
+      font-size: 14px;
+    }
+
+    .service-card li {
+      margin-bottom: 5px;
+    }
+
+    /* Process */
+
+    .process {
+      padding: 95px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 28px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .process-number {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 17px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--primary);
+      font-weight: bold;
+    }
+
+    .process-card h3 {
+      color: var(--dark);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Why Choose Us */
+
+    .why-us {
+      padding: 90px 0;
+      background: var(--light);
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .why-layout > p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      list-style: none;
+    }
+
+    .benefits li {
+      display: flex;
+      gap: 9px;
+      color: #50586f;
+      font-size: 14px;
+    }
+
+    .benefits li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #15936d;
+      background: #dff8ef;
+      font-weight: bold;
+    }
+
+    .website-preview {
+      min-height: 330px;
+      padding: 20px;
+      border-radius: 22px;
+      background: #171b2e;
+      box-shadow: var(--shadow);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 7px;
+      padding-bottom: 15px;
+    }
+
+    .browser-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff6b6b;
+    }
+
+    .browser-bar span:nth-child(2) {
+      background: #ffd166;
+    }
+
+    .browser-bar span:nth-child(3) {
+      background: #06d6a0;
+    }
+
+    .preview-content {
+      min-height: 255px;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(108, 99, 255, 0.9), rgba(0, 212, 255, 0.7));
+    }
+
+    .preview-content h3 {
+      color: var(--white);
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .preview-content p {
+      color: #eefcff;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 90px 0;
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .cta h2 {
+      max-width: 650px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      color: #c2c8dc;
+    }
+
+    .cta .btn {
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 27px 0;
+      color: #abb2c9;
+      background: #0b0e1a;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro-content,
+      .why-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px 4%;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .hero {
+        padding: 75px 0 90px;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 25px;
+      }
+
+      .footer-inner {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        openEd<span>Labs</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li>
+          <a href="professional-services.html">Professional Services</a>
+        </li>
+        <li><a href="#services" class="active">Web Development</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="section-label" style="color: var(--cyan);">
+            Website Design & Development
+          </p>
+
+          <h1>
+            Websites that look great,
+            <span>work better.</span>
+          </h1>
+
+          <p>
+            We design and develop modern, responsive, and user-friendly
+            websites that help organizations build credibility, communicate
+            clearly, and grow online.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Start Your Project →
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro">
+      <div class="container intro-content">
+
+        <div class="intro-text">
+          <p class="section-label">Digital Presence</p>
+
+          <h2 class="section-title">
+            Turn your ideas into a powerful online experience
+          </h2>
+
+          <p>
+            Your website is often the first interaction people have with your
+            organization. We create professional digital experiences that are
+            visually engaging, easy to use, fast, and aligned with your goals.
+          </p>
+
+          <p>
+            Whether you need a business website, educational platform,
+            portfolio, landing page, or custom web application, our team can
+            help you plan, design, develop, and launch it.
+          </p>
+        </div>
+
+        <div class="intro-card">
+          <h3>Design with purpose. Develop for growth.</h3>
+          <p>
+            We combine thoughtful design, reliable development, and practical
+            technology to create websites that deliver measurable value.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-label">Our Services</p>
+
+          <h2 class="section-title">
+            Everything you need for your website
+          </h2>
+
+          <p class="section-text">
+            From the first concept to the final launch, we provide complete
+            website design and development support.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="icon">✦</div>
+            <h3>Website Design</h3>
+            <p>
+              Professional and visually appealing website designs created
+              around your brand, audience, and objectives.
+            </p>
+            <ul>
+              <li>Website layout and visual design</li>
+              <li>Brand-focused color and typography</li>
+              <li>User-friendly page structure</li>
+              <li>Desktop and mobile designs</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">⌘</div>
+            <h3>Website Development</h3>
+            <p>
+              Fast, responsive, and functional websites built using modern web
+              development practices.
+            </p>
+            <ul>
+              <li>HTML, CSS, and JavaScript websites</li>
+              <li>Responsive development</li>
+              <li>Interactive features</li>
+              <li>Performance-focused code</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">▣</div>
+            <h3>Business Websites</h3>
+            <p>
+              Build trust and reach more customers with a professional website
+              for your business or organization.
+            </p>
+            <ul>
+              <li>Company profile websites</li>
+              <li>Service and product pages</li>
+              <li>Contact and enquiry forms</li>
+              <li>Testimonials and portfolio sections</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">▤</div>
+            <h3>Educational Websites</h3>
+            <p>
+              Digital platforms for schools, colleges, training centers, and
+              education-focused organizations.
+            </p>
+            <ul>
+              <li>Course and program pages</li>
+              <li>Student registration forms</li>
+              <li>Faculty and department pages</li>
+              <li>Events and announcements</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">◉</div>
+            <h3>Landing Pages</h3>
+            <p>
+              Focused landing pages designed to promote programs, services,
+              campaigns, products, or events.
+            </p>
+            <ul>
+              <li>Marketing campaign pages</li>
+              <li>Lead-generation forms</li>
+              <li>Course registration pages</li>
+              <li>Call-to-action optimization</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">↻</div>
+            <h3>Website Maintenance</h3>
+            <p>
+              Keep your website updated, secure, accurate, and performing
+              properly after launch.
+            </p>
+            <ul>
+              <li>Content updates</li>
+              <li>Bug fixes</li>
+              <li>Design improvements</li>
+              <li>Technical support</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-label">Our Process</p>
+
+          <h2 class="section-title">
+            From concept to launch
+          </h2>
+
+          <p class="section-text">
+            We follow a clear and collaborative process to make sure your
+            website is aligned with your goals.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Discovery</h3>
+            <p>
+              We understand your organization, audience, goals, and website
+              requirements.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Planning</h3>
+            <p>
+              We plan the site structure, content, features, timeline, and
+              technology.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Design</h3>
+            <p>
+              We create a clear, modern, and user-friendly visual design for
+              your website.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">04</div>
+            <h3>Development</h3>
+            <p>
+              We convert the approved design into a responsive and functional
+              website.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">05</div>
+            <h3>Testing</h3>
+            <p>
+              We test the website across devices, browsers, forms, links, and
+              key features.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">06</div>
+            <h3>Launch</h3>
+            <p>
+              We publish your website and provide guidance for future updates
+              and improvements.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="why-us">
+      <div class="container why-layout">
+
+        <div>
+          <p class="section-label">Why Choose Us</p>
+
+          <h2 class="section-title">
+            A website created for your success
+          </h2>
+
+          <p>
+            We focus on creating websites that are not only attractive but
+            also easy to navigate, easy to maintain, and useful for your
+            audience.
+          </p>
+
+          <ul class="benefits">
+            <li>Modern and professional design</li>
+            <li>Mobile-friendly layouts</li>
+            <li>Clear content structure</li>
+            <li>Fast-loading pages</li>
+            <li>Search-engine-friendly structure</li>
+            <li>Easy-to-use contact forms</li>
+            <li>Scalable website architecture</li>
+            <li>Post-launch technical support</li>
+          </ul>
+        </div>
+
+        <div class="website-preview">
+          <div class="browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="preview-content">
+            <div>
+              <h3>Your website starts here.</h3>
+              <p>
+                A clean, responsive, and engaging digital experience for your
+                organization.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+
+        <div>
+          <h2>Ready to build your website?</h2>
+
+          <p>
+            Tell us about your organization, project requirements, preferred
+            design, and timeline. We will help you plan the right website
+            solution.
+          </p>
+        </div>
+
+        <!-- Replace the email address with your actual email -->
+        <a
+          href="mailto:hello@openedlabs.com?subject=Website Design and Development Enquiry"
+          class="btn btn-primary"
+        >
+          Discuss Your Project →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        © <span id="year"></span> openEd Labs. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
