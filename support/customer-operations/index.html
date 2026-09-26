@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Customer Support Outsourcing Services | openEd Labs</title>
+
+  <meta
+    name="description"
+    content="Outsource customer support, technical support, and travel management services to openEd Labs."
+  />
+
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --primary-dark: #5148d8;
+      --cyan: #00d4ff;
+      --dark: #101321;
+      --dark-light: #1b2040;
+      --text: #252a40;
+      --muted: #6b7388;
+      --light: #f7f8fc;
+      --white: #ffffff;
+      --border: #e5e7f0;
+      --green: #15936d;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(28, 34, 70, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-outline:hover {
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      color: var(--dark);
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.15;
+    }
+
+    .section-text {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--dark);
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      color: #555d73;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 120px;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(0, 212, 255, 0.2),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(108, 99, 255, 0.3),
+          transparent 33%
+        ),
+        linear-gradient(135deg, var(--dark), var(--dark-light));
+    }
+
+    .hero::before {
+      content: "24/7";
+      position: absolute;
+      right: 7%;
+      bottom: 1%;
+      color: rgba(255, 255, 255, 0.06);
+      font-size: 180px;
+      font-weight: bold;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin-bottom: 24px;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      max-width: 710px;
+      margin-bottom: 32px;
+      color: #c9cee2;
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Intro */
+
+    .intro {
+      padding: 95px 0 75px;
+    }
+
+    .intro-content {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .intro-text p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .intro-card {
+      padding: 38px;
+      border-radius: 24px;
+      color: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(108, 99, 255, 0.95),
+          rgba(0, 180, 215, 0.9)
+        );
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h3 {
+      margin-bottom: 12px;
+      font-size: 27px;
+    }
+
+    .intro-card p {
+      color: #eefcff;
+    }
+
+    .intro-card ul {
+      margin-top: 20px;
+      padding-left: 20px;
+      color: #eefcff;
+    }
+
+    .intro-card li {
+      margin-bottom: 7px;
+    }
+
+    /* Benefits */
+
+    .benefits-section {
+      padding: 90px 0;
+      background: var(--light);
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    .section-heading .section-text {
+      margin: auto;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      padding: 30px 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: 0.25s ease;
+    }
+
+    .benefit-card:hover {
+      border-color: #c9c5ff;
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      color: var(--primary);
+      background: #eeedff;
+      font-size: 25px;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+      font-size: 19px;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    /* Services */
+
+    .services {
+      padding: 95px 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 32px 26px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: 0.25s ease;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--cyan)
+      );
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 17px;
+      color: var(--primary);
+      background: #eeedff;
+      font-size: 28px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-size: 23px;
+    }
+
+    .service-card h4 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .service-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      color: #555d73;
+      font-size: 14px;
+    }
+
+    .service-card li {
+      margin-bottom: 8px;
+    }
+
+    /* Process */
+
+    .process {
+      padding: 90px 0;
+      background: var(--light);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 30px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .process-number {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 17px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--primary);
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-size: 18px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Why Us */
+
+    .why-us {
+      padding: 95px 0;
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .why-layout > div > p {
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      list-style: none;
+    }
+
+    .benefit-list li {
+      display: flex;
+      gap: 9px;
+      color: #50586f;
+      font-size: 14px;
+    }
+
+    .benefit-list li::before {
+      width: 21px;
+      height: 21px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green);
+      background: #dff8ef;
+      content: "✓";
+      font-weight: bold;
+    }
+
+    .support-preview {
+      min-height: 350px;
+      padding: 20px;
+      border-radius: 22px;
+      background: #171b2e;
+      box-shadow: var(--shadow);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 7px;
+      padding-bottom: 15px;
+    }
+
+    .browser-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff6b6b;
+    }
+
+    .browser-bar span:nth-child(2) {
+      background: #ffd166;
+    }
+
+    .browser-bar span:nth-child(3) {
+      background: #06d6a0;
+    }
+
+    .preview-content {
+      min-height: 270px;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(108, 99, 255, 0.9),
+          rgba(0, 212, 255, 0.7)
+        );
+    }
+
+    .preview-content h3 {
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: 27px;
+    }
+
+    .preview-content p {
+      color: #eefcff;
+      font-size: 14px;
+    }
+
+    .support-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .support-stat {
+      padding: 12px 5px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+    }
+
+    .support-stat strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 20px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 90px 0;
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .cta h2 {
+      max-width: 650px;
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+    }
+
+    .cta p {
+      max-width: 650px;
+      color: #c2c8dc;
+    }
+
+    .cta .btn {
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 27px 0;
+      color: #abb2c9;
+      background: #0b0e1a;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .benefit-grid,
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro-content,
+      .why-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px 4%;
+        border-bottom: 1px solid var(--border);
+        background: var(--white);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .hero {
+        padding: 75px 0 90px;
+      }
+
+      .benefit-grid,
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-list {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 25px;
+      }
+
+      .footer-inner {
+        display: block;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .support-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        openEd<span> Labs</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="active">Support Services</a>
+        </li>
+        <li>
+          <a href="#process">How We Partner</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="section-label" style="color: var(--cyan);">
+            Outsourced Support Solutions
+          </p>
+
+          <h1>
+            Scalable Support Solutions
+            <span>for Growing Organizations</span>
+          </h1>
+
+          <p>
+            Elevate your customer experience and operational efficiency.
+            We provide expert-led customer support, technical troubleshooting,
+            and seamless travel management for organizations that want to
+            scale with confidence.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Request a Partnership Proposal
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro">
+      <div class="container intro-content">
+        <div class="intro-text">
+          <p class="section-label">Strategic Support Partnerships</p>
+
+          <h2 class="section-title">
+            Extend your team without extending your overhead.
+          </h2>
+
+          <p>
+            Managing customer communication, technical queries, and travel
+            coordination can consume valuable time and resources. Our
+            outsourced support teams work as an extension of your organization.
+          </p>
+
+          <p>
+            We adapt to your systems, policies, workflows, and brand voice to
+            deliver consistent, professional support across every interaction.
+          </p>
+        </div>
+
+        <div class="intro-card">
+          <h3>Built for Operational Excellence</h3>
+
+          <p>
+            From first-line customer conversations to complex technical
+            escalations, our specialists help your organization operate more
+            efficiently.
+          </p>
+
+          <ul>
+            <li>Dedicated support specialists</li>
+            <li>Flexible and scalable service coverage</li>
+            <li>Clear performance reporting</li>
+            <li>Processes aligned with your organization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Partner -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Why Partner With openEd Labs?</p>
+
+          <h2 class="section-title">
+            Reliable support that grows with you
+          </h2>
+
+          <p class="section-text">
+            Reduce operational pressure while improving service quality,
+            response times, and customer satisfaction.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="icon">↘</div>
+
+            <h3>Cost Optimization</h3>
+
+            <p>
+              Reduce overhead costs associated with in-house staffing,
+              infrastructure, recruitment, and training.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="icon">◷</div>
+
+            <h3>24/7 Reliability</h3>
+
+            <p>
+              Ensure your clients are never left waiting with scalable
+              support coverage tailored to your operating hours.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="icon">✦</div>
+
+            <h3>Expert Integration</h3>
+
+            <p>
+              We do more than answer questions. We integrate into your
+              workflows, systems, service standards, and brand voice.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Our Outsourcing Pillars</p>
+
+          <h2 class="section-title">
+            Specialized support streams
+          </h2>
+
+          <p class="section-text">
+            Flexible services designed to improve organizational efficiency,
+            customer satisfaction, and service continuity.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-icon">♧</div>
+
+            <h3>Customer Support</h3>
+
+            <h4>Customer Support Management</h4>
+
+            <p>
+              Reliable, empathetic, and efficient frontline communication.
+              We handle the customer lifecycle to support satisfaction,
+              loyalty, and retention.
+            </p>
+
+            <ul>
+              <li>Omnichannel support through email, chat, and phone</li>
+              <li>Expert query resolution and account management</li>
+              <li>Customer feedback and escalation handling</li>
+              <li>CRM integration and data management</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌘</div>
+
+            <h3>Tech Support</h3>
+
+            <h4>Technical Support Services</h4>
+
+            <p>
+              Deep technical expertise to solve complex problems quickly.
+              Our team acts as an extension of your product or engineering
+              department.
+            </p>
+
+            <ul>
+              <li>Level 1 and Level 2 software support</li>
+              <li>Hardware and device troubleshooting</li>
+              <li>Incident tracking and bug escalation</li>
+              <li>Client onboarding and technical setup</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✈</div>
+
+            <h3>Travel Management</h3>
+
+            <h4>Travel &amp; Logistics Management</h4>
+
+            <p>
+              Precision planning for corporate and organizational mobility.
+              We remove the stress from business travel coordination.
+            </p>
+
+            <ul>
+              <li>Flight, hotel, and transport bookings</li>
+              <li>Itinerary optimization and scheduling</li>
+              <li>Travel changes and disruption support</li>
+              <li>Expense and policy compliance monitoring</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">How We Partner</p>
+
+          <h2 class="section-title">
+            A simple path to better support
+          </h2>
+
+          <p class="section-text">
+            We build every partnership around clarity, accountability, and
+            a practical understanding of your organization.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-number">1</div>
+
+            <h3>Consultation</h3>
+
+            <p>
+              We analyze your current support volume, workflows, service
+              expectations, and critical pain points.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">2</div>
+
+            <h3>Onboarding</h3>
+
+            <p>
+              Our specialists undergo structured training on your products,
+              systems, policies, processes, and brand voice.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">3</div>
+
+            <h3>Execution</h3>
+
+            <p>
+              We launch your support channels with dedicated managers
+              monitoring quality, performance, and customer experience.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+      <div class="container why-layout">
+        <div>
+          <p class="section-label">Support That Fits Your Organization</p>
+
+          <h2 class="section-title">
+            A dependable extension of your team
+          </h2>
+
+          <p>
+            Our goal is to make outsourced support feel fully integrated into
+            your organization. Every interaction is managed with consistency,
+            professionalism, and attention to detail.
+          </p>
+
+          <ul class="benefit-list">
+            <li>Dedicated account management</li>
+            <li>Flexible support coverage</li>
+            <li>Documented workflows and processes</li>
+            <li>Regular quality reviews</li>
+            <li>Performance and service reporting</li>
+            <li>Scalable staffing options</li>
+            <li>Brand-aligned communication</li>
+            <li>Continuous process improvement</li>
+          </ul>
+        </div>
+
+        <div class="support-preview">
+          <div class="browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="preview-content">
+            <div>
+              <h3>Support Without Limits</h3>
+
+              <p>
+                Customer care, technical assistance, and travel coordination
+                delivered through one reliable partnership.
+              </p>
+
+              <div class="support-stats">
+                <div class="support-stat">
+                  <strong>24/7</strong>
+                  Coverage
+                </div>
+
+                <div class="support-stat">
+                  <strong>3</strong>
+                  Support Pillars
+                </div>
+
+                <div class="support-stat">
+                  <strong>1</strong>
+                  Trusted Partner
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to scale your operations?</h2>
+
+          <p>
+            Let’s discuss a customized support package that fits your
+            organization’s specific needs, service volume, and operational
+            goals.
+          </p>
+        </div>
+
+        <a
+          href="mailto:hello@openedlabs.com?subject=Support Services Partnership Inquiry"
+          class="btn btn-primary"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        © 2026 openEd Labs. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#process">How We Partner</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("show");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  </script>
+
+</body>
+</html>
