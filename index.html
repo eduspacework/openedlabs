@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>openEd Labs | Software, AI &amp; Professional Learning</title>
+
+<meta
+    name="description"
+    content="openEd Labs provides AI-led software development, customer operations, web development, DevOps, and professional training services."
+>
+
+<style>
+
+:root {
+    --primary: #6c63ff;
+    --primary-dark: #5148d8;
+    --cyan: #00d4ff;
+
+    --dark: #101321;
+    --dark-light: #1b2040;
+
+    --text: #252a40;
+    --muted: #6b7388;
+
+    --light: #f7f8fc;
+    --white: #ffffff;
+
+    --border: #e5e7f0;
+
+    --green: #15936d;
+
+    --radius: 18px;
+
+    --shadow:
+        0 18px 45px rgba(28, 34, 70, 0.10);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border: 2px solid transparent;
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.45);
+}
+
+.btn-outline:hover {
+    color: var(--dark);
+    background: var(--white);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--dark);
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
+
+    color: #555d73;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links > li {
+    position: relative;
+}
+
+.nav-links > li > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 25px 0;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--primary);
+}
+
+
+/* =========================
+   SUPPORT DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 15px;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: calc(100% - 4px);
+    left: 50%;
+
+    min-width: 285px;
+
+    padding: 9px;
+
+    margin: 0;
+
+    list-style: none;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -8px);
+
+    transition: 0.2s ease;
+}
+
+.dropdown-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -7px;
+    left: 50%;
+
+    width: 13px;
+    height: 13px;
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+
+    background: var(--white);
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 11px 13px;
+
+    border-radius: 9px;
+
+    color: #555d73;
+
+    font-size: 13.5px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    color: var(--primary);
+
+    background: #f3f2ff;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--dark);
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 110px 0 125px;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,212,255,0.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(108,99,255,0.30),
+            transparent 33%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--dark),
+            var(--dark-light)
+        );
+}
+
+.hero::before {
+    content: "</>";
+
+    position: absolute;
+
+    right: 7%;
+    bottom: 2%;
+
+    color: rgba(255,255,255,0.05);
+
+    font-size: 180px;
+    font-weight: bold;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 820px;
+}
+
+.hero-label {
+    margin-bottom: 15px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 820px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero-description {
+    max-width: 730px;
+
+    margin-bottom: 34px;
+
+    color: #c9cee2;
+
+    font-size: 18px;
+}
+
+.hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    padding: 95px 0 80px;
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-bottom: 17px;
+
+    color: var(--dark);
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    line-height: 1.15;
+}
+
+.intro-text p {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.intro-card {
+    padding: 40px;
+
+    border-radius: 24px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108,99,255,0.95),
+            rgba(0,180,215,0.90)
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.intro-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 28px;
+}
+
+.intro-card p {
+    color: #eefcff;
+}
+
+.intro-card ul {
+    margin-top: 20px;
+
+    padding-left: 20px;
+
+    color: #eefcff;
+}
+
+.intro-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    padding: 95px 0;
+
+    background: var(--light);
+}
+
+.section-heading {
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.section-heading .section-text {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.service-card {
+    position: relative;
+
+    padding: 32px 26px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    transition: 0.25s ease;
+}
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--cyan)
+        );
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow);
+
+    transform: translateY(-6px);
+}
+
+.service-icon {
+    width: 62px;
+    height: 62px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 17px;
+
+    color: var(--primary);
+
+    background: #eeedff;
+
+    font-size: 28px;
+}
+
+.service-card h3 {
+    margin-bottom: 9px;
+
+    color: var(--dark);
+
+    font-size: 21px;
+}
+
+.service-card p {
+    margin-bottom: 17px;
+
+    color: var(--muted);
+
+    font-size: 14.5px;
+}
+
+.service-card a {
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.service-card a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================
+   APPROACH
+========================= */
+
+.approach {
+    padding: 95px 0;
+}
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.approach-card {
+    padding: 28px 22px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+}
+
+.approach-number {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 17px;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: var(--primary);
+
+    font-weight: bold;
+}
+
+.approach-card h3 {
+    margin-bottom: 8px;
+
+    color: var(--dark);
+
+    font-size: 17px;
+}
+
+.approach-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   WHY OPENED LABS
+========================= */
+
+.why {
+    padding: 90px 0;
+
+    background: var(--light);
+}
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.why-text > p {
+    margin-bottom: 24px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.benefit-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    list-style: none;
+}
+
+.benefit-list li {
+    display: flex;
+
+    gap: 9px;
+
+    color: #50586f;
+
+    font-size: 14px;
+}
+
+.benefit-list li::before {
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--green);
+
+    background: #dff8ef;
+
+    content: "✓";
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CODE PREVIEW
+========================= */
+
+.code-preview {
+    padding: 20px;
+
+    min-height: 340px;
+
+    border-radius: 22px;
+
+    background: #171b2e;
+
+    box-shadow: var(--shadow);
+}
+
+.terminal-bar {
+    display: flex;
+
+    gap: 7px;
+
+    padding-bottom: 15px;
+}
+
+.terminal-bar span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ff6b6b;
+}
+
+.terminal-bar span:nth-child(2) {
+    background: #ffd166;
+}
+
+.terminal-bar span:nth-child(3) {
+    background: #06d6a0;
+}
+
+.terminal-content {
+    min-height: 260px;
+
+    padding: 26px;
+
+    border-radius: 12px;
+
+    background: #0e1220;
+
+    color: #b9f6d3;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.terminal-content .command {
+    color: var(--cyan);
+}
+
+.terminal-content .success {
+    color: #70e1a5;
+}
+
+.terminal-content .muted {
+    color: #7c849d;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 90px 0;
+
+    color: var(--white);
+
+    background: var(--dark);
+}
+
+.cta-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+.cta h2 {
+    max-width: 650px;
+
+    margin-bottom: 14px;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    line-height: 1.15;
+}
+
+.cta p {
+    max-width: 650px;
+
+    color: #c2c8dc;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 27px 0;
+
+    color: #abb2c9;
+
+    background: #0b0e1a;
+
+    font-size: 13px;
+}
+
+.footer-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .service-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .approach-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .intro-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 4%;
+
+        border-bottom: 1px solid var(--border);
+
+        background: var(--white);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links > li {
+        width: 100%;
+    }
+
+    .nav-links > li > a {
+        display: flex;
+
+        width: 100%;
+
+        padding: 12px 0;
+    }
+
+
+    /* Mobile Support Dropdown */
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 0 0 6px 15px;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        background: transparent;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+    }
+
+    .dropdown-menu::before {
+        display: none;
+    }
+
+    .dropdown-menu a {
+        padding: 9px 10px;
+
+        white-space: normal;
+
+        font-size: 13px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: none;
+    }
+
+
+    .hero {
+        padding: 75px 0 90px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+
+    .service-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cta-inner {
+        display: block;
+    }
+
+    .cta .btn {
+        margin-top: 25px;
+    }
+
+
+    .footer-inner {
+        display: block;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+
+        margin-top: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <div class="container nav-inner">
+
+
+        <a href="index.html" class="logo">
+            openEd<span>Labs</span>
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <ul class="nav-links" id="navLinks">
+
+
+            <li>
+                <a href="index.html" class="active">
+                    Home
+                </a>
+            </li>
+
+
+            <!-- SUPPORT DROPDOWN -->
+
+            <li class="dropdown">
+
+                <a
+                    href="#"
+                    class="dropdown-toggle"
+                    aria-haspopup="true"
+                >
+                    Support
+                    <span class="dropdown-arrow">⌄</span>
+                </a>
+
+
+                <ul class="dropdown-menu">
+
+
+                    <li>
+                        <a href="support/ai-led-software-development">
+                            AI-Led Software Development
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="support/customer-operations">
+                            Customer Operations
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="support/training">
+                            Training
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="support/web-development">
+                            Web Development
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="support/devops-services">
+                            DevOps Services
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+
+            <p class="hero-label">
+                Software • AI • Learning
+            </p>
+
+
+            <h1>
+                Build. Learn.
+                <span>Innovate.</span>
+            </h1>
+
+
+            <p class="hero-description">
+                openEd Labs brings together software engineering,
+                artificial intelligence, digital solutions, and
+                professional learning to help individuals and
+                organizations build practical technology capabilities.
+            </p>
+
+           <div class="hero-actions">
+
+    <a
+        href="#services"
+        class="btn btn-primary"
+    >
+        Explore Our Services
+    </a>
+
+    <a
+        href="https://wa.me/919625188625?text=Hello%20openEd%20Labs%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services%20and%20explore%20a%20possible%20collaboration."
+        class="btn btn-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        WhatsApp Us
+    </a>
+
+</div>
+          <!--
+            <div class="hero-actions">
+
+
+                <a
+                    href="#services"
+                    class="btn btn-primary"
+                >
+                    Explore Our Services
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline"
+                >
+                    Start a Conversation
+                </a>
+
+
+            </div>
+-->
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro" id="about">
+
+    <div class="container intro-grid">
+
+
+        <div class="intro-text">
+
+            <p class="section-label">
+                openEd Labs
+            </p>
+
+
+            <h2 class="section-title">
+                Practical technology for real-world needs.
+            </h2>
+
+
+            <p>
+                openEd Labs works across software development,
+                artificial intelligence, web technologies,
+                customer operations, and professional training.
+            </p>
+
+
+            <p>
+                Our approach combines practical engineering,
+                modern technology, continuous learning, and
+                collaboration to help turn ideas and requirements
+                into useful solutions.
+            </p>
+
+        </div>
+
+
+        <div class="intro-card">
+
+            <h3>
+                Learn • Build • Deploy • Innovate
+            </h3>
+
+
+            <p>
+                Whether you need software development, AI-led
+                engineering, web solutions, operational support,
+                or technical training, we can work with you
+                according to your requirements.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    Software &amp; AI solutions
+                </li>
+
+                <li>
+                    Professional training
+                </li>
+
+                <li>
+                    Web &amp; digital development
+                </li>
+
+                <li>
+                    Technical and operational support
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                What We Support
+            </p>
+
+
+            <h2 class="section-title">
+                Technology services for modern needs
+            </h2>
+
+
+            <p class="section-text">
+                Explore our development, AI, training, web,
+                operations, and technology support capabilities.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <!-- AI -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ✦
+                </div>
+
+
+                <h3>
+                    AI-Led Software Development
+                </h3>
+
+
+                <p>
+                    Build and modernize software using AI-assisted
+                    engineering, intelligent applications,
+                    automation, testing, and modern development
+                    workflows.
+                </p>
+
+
+                <a href="support/ai-led-software-development">
+                    Explore AI Development →
+                </a>
+
+            </article>
+
+
+            <!-- Customer Operations -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ◉
+                </div>
+
+
+                <h3>
+                    Customer Operations
+                </h3>
+
+
+                <p>
+                    Technology-enabled support for customer
+                    operations, workflows, process improvement,
+                    documentation, and operational efficiency.
+                </p>
+
+
+                <a href="support/customer-operations">
+                    Explore Customer Operations →
+                </a>
+
+            </article>
+
+
+            <!-- Training -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ◆
+                </div>
+
+
+                <h3>
+                    Training
+                </h3>
+
+
+                <p>
+                    Practical learning programs covering
+                    programming, software development,
+                    artificial intelligence, and modern
+                    technology skills.
+                </p>
+
+
+                <a href="support/training">
+                    Explore Training →
+                </a>
+
+            </article>
+
+
+            <!-- Web -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+
+                <h3>
+                    Web Development
+                </h3>
+
+
+                <p>
+                    Responsive websites and web applications
+                    designed around your content, business
+                    requirements, workflows, and digital goals.
+                </p>
+
+
+                <a href="support/web-development">
+                    Explore Web Development →
+                </a>
+
+            </article>
+
+
+            <!-- DevOps -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ⚙
+                </div>
+
+
+                <h3>
+                    DevOps Services
+                </h3>
+
+
+                <p>
+                    Cloud infrastructure, CI/CD automation,
+                    deployment workflows, monitoring,
+                    security, and operational engineering.
+                </p>
+
+
+                <a href="support/devops-services">
+                    Explore DevOps →
+                </a>
+
+            </article>
+
+
+            <!-- Collaboration -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ↗
+                </div>
+
+
+                <h3>
+                    Technology Collaboration
+                </h3>
+
+
+                <p>
+                    Flexible collaboration for organizations,
+                    institutions, professionals, and teams
+                    looking for practical technology expertise.
+                </p>
+
+
+                <a href="#contact">
+                    Discuss a Collaboration →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     APPROACH
+========================= -->
+
+<section class="approach">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                Our Approach
+            </p>
+
+
+            <h2 class="section-title">
+                From requirement to practical solution
+            </h2>
+
+
+            <p class="section-text">
+                We focus on understanding the requirement first,
+                then selecting appropriate technology and
+                building a solution that can be used and maintained.
+            </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+
+            <article class="approach-card">
+
+                <div class="approach-number">
+                    1
+                </div>
+
+
+                <h3>
+                    Understand
+                </h3>
+
+
+                <p>
+                    Understand the requirement, users,
+                    challenges, goals, and constraints.
+                </p>
+
+            </article>
+
+
+            <article class="approach-card">
+
+                <div class="approach-number">
+                    2
+                </div>
+
+
+                <h3>
+                    Plan
+                </h3>
+
+
+                <p>
+                    Define the appropriate technology,
+                    workflow, architecture, and delivery approach.
+                </p>
+
+            </article>
+
+
+            <article class="approach-card">
+
+                <div class="approach-number">
+                    3
+                </div>
+
+
+                <h3>
+                    Build
+                </h3>
+
+
+                <p>
+                    Develop, test, document, and refine
+                    the solution iteratively.
+                </p>
+
+            </article>
+
+
+            <article class="approach-card">
+
+                <div class="approach-number">
+                    4
+                </div>
+
+
+                <h3>
+                    Improve
+                </h3>
+
+
+                <p>
+                    Continue improving the solution,
+                    workflow, performance, and capabilities.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY OPENED LABS
+========================= -->
+
+<section class="why">
+
+    <div class="container why-grid">
+
+
+        <div class="why-text">
+
+
+            <p class="section-label">
+                Why openEd Labs
+            </p>
+
+
+            <h2 class="section-title">
+                Technology with a learning mindset.
+            </h2>
+
+
+            <p>
+                We believe technology should be practical,
+                understandable, and continuously improved.
+                Our work combines software engineering with
+                learning and experimentation across modern
+                technology.
+            </p>
+
+
+            <ul class="benefit-list">
+
+
+                <li>
+                    Practical engineering
+                </li>
+
+
+                <li>
+                    AI-aware development
+                </li>
+
+
+                <li>
+                    Flexible collaboration
+                </li>
+
+
+                <li>
+                    Modern technology
+                </li>
+
+
+                <li>
+                    Continuous learning
+                </li>
+
+
+                <li>
+                    Clear documentation
+                </li>
+
+
+                <li>
+                    Scalable solutions
+                </li>
+
+
+                <li>
+                    Long-term improvement
+                </li>
+
+
+            </ul>
+
+        </div>
+
+
+        <div class="code-preview">
+
+
+            <div class="terminal-bar">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div class="terminal-content">
+
+
+                <div class="muted">
+                    # openEd Labs workflow
+                </div>
+
+
+                <div>
+                    <span class="command">$</span>
+                    understand --requirement
+                </div>
+
+
+                <div class="success">
+                    ✓ Requirement understood
+                </div>
+
+
+                <div>
+                    <span class="command">$</span>
+                    design --solution
+                </div>
+
+
+                <div class="success">
+                    ✓ Solution designed
+                </div>
+
+
+                <div>
+                    <span class="command">$</span>
+                    build --technology
+                </div>
+
+
+                <div class="success">
+                    ✓ Solution developed
+                </div>
+
+
+                <div>
+                    <span class="command">$</span>
+                    improve --continuously
+                </div>
+
+
+                <div class="muted">
+                    # status: learning + building
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="contact">
+
+  <div class="cta-inner">
+
+    <div>
+
+        <h2>
+            Have a technology requirement?
+        </h2>
+
+        <p>
+            Tell us what you are trying to build, improve,
+            automate, learn, or solve. We can discuss the
+            requirement and explore how openEd Labs can help.
+        </p>
+
+        <p style="margin-top: 12px; color: #c2c8dc;">
+            WhatsApp: +91 9625188625
+        </p>
+
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+
+        <a
+            href="https://wa.me/919625188625?text=Hello%20openEd%20Labs%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services%20and%20explore%20a%20possible%20collaboration."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WhatsApp Us
+        </a>
+
+        <a
+            href="mailto:openedlabs@gmail.com?subject=openEd Labs Inquiry"
+            class="btn btn-outline"
+        >
+            Email Us
+        </a>
+
+    </div>
+
+</div>
+  <!--
+    <div class="container cta-inner">
+
+
+        <div>
+
+            <h2>
+                Have a technology requirement?
+            </h2>
+
+
+            <p>
+                Tell us what you are trying to build, improve,
+                automate, learn, or solve. We can discuss the
+                requirement and explore how openEd Labs can help.
+            </p>
+
+        </div>
+
+
+        <a
+            href="mailto:openedlabs@gmail.com?subject=OpenEd Labs Inquiry"
+            class="btn btn-primary"
+        >
+            Start a Conversation
+        </a>
+
+
+    </div>
+-->
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+
+        <p>
+            © 2026 openEd Labs. All rights reserved.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen =
+        navLinks.classList.toggle("show");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+    menuToggle.textContent =
+        isOpen ? "×" : "☰";
+
+});
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            /*
+             * Do not close the mobile menu when
+             * clicking the Support dropdown itself.
+             */
+
+            if (
+                link.classList.contains(
+                    "dropdown-toggle"
+                )
+            ) {
+                return;
+            }
+
+
+            navLinks.classList.remove("show");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.textContent = "☰";
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
+
