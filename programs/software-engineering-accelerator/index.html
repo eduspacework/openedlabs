@@ -1,0 +1,3190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1-Year Professional Software Engineering Accelerator | openEd Labs</title>
+
+    <meta name="description"
+        content="Join the openEd Labs 1-Year Professional Software Engineering Accelerator. Learn software engineering, full-stack development, backend systems, cloud, DevOps, AI engineering and enterprise architecture through a structured 52-week professional program.">
+
+    <style>
+
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --secondary: #111827;
+            --text: #374151;
+            --muted: #6b7280;
+            --light: #fffbeb;
+            --orange-light: #fef3c7;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --shadow: 0 15px 40px rgba(17, 24, 39, 0.08);
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand h1 {
+            color: var(--secondary);
+            font-size: 1.55rem;
+            line-height: 1.1;
+        }
+
+        .initiative {
+            color: var(--primary-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .header-link {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--primary-dark);
+            background: var(--white);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 100px 0 90px;
+            background:
+                linear-gradient(
+                    rgba(255,251,235,0.96),
+                    rgba(255,255,255,0.98)
+                );
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .eyebrow,
+        .section-label {
+            color: var(--primary-dark);
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: var(--secondary);
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.03;
+            letter-spacing: -0.05em;
+            margin-bottom: 22px;
+        }
+
+        .hero h2 span {
+            color: var(--primary-dark);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.12rem;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-card {
+            padding: 32px;
+            color: var(--white);
+            background: var(--secondary);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 13px;
+            color: #d1d5db;
+        }
+
+        .hero-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .light-section {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            color: var(--secondary);
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* CARDS */
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 28px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 25px rgba(17,24,39,0.04);
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        .card-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 18px;
+            color: var(--white);
+            background: var(--primary);
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        /* PROGRAM SNAPSHOT */
+
+        .snapshot {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .snapshot-item {
+            padding: 25px;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .snapshot-item strong {
+            display: block;
+            color: var(--primary-dark);
+            font-size: 1.7rem;
+            margin-bottom: 5px;
+        }
+
+        .snapshot-item span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* LEVELS */
+
+        .levels {
+            display: grid;
+            gap: 28px;
+        }
+
+        .level-card {
+            display: grid;
+            grid-template-columns: 175px 1fr;
+            gap: 30px;
+            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 25px rgba(17,24,39,0.04);
+        }
+
+        .level-number {
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            background: var(--secondary);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .level-number span {
+            color: #fbbf24;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .level-number strong {
+            font-size: 2.7rem;
+            line-height: 1;
+            margin-top: 8px;
+        }
+
+        .level-content h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .level-subtitle {
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .level-content ul {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 9px 20px;
+            list-style: none;
+        }
+
+        .level-content li {
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .level-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 800;
+        }
+
+        .capstone {
+            margin-top: 20px;
+            padding: 15px 18px;
+            background: var(--orange-light);
+            border-radius: 10px;
+        }
+
+        .capstone strong {
+            color: var(--primary-dark);
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .timeline-item {
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .quarter {
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-box {
+            padding: 40px;
+            color: var(--white);
+            background: var(--secondary);
+            border-radius: var(--radius);
+        }
+
+        .experience-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .experience-box > p {
+            color: #d1d5db;
+            margin-bottom: 28px;
+            max-width: 850px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+        }
+
+        .experience-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+        }
+
+        .experience-item strong {
+            display: block;
+            color: #fbbf24;
+            margin-bottom: 6px;
+        }
+
+        .experience-item span {
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        /* CHECKLIST */
+
+        .list-card {
+            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .list-card h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 13px;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 800;
+        }
+
+        /* FEE STRUCTURE */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 25px rgba(17,24,39,0.04);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .pricing-label {
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            color: var(--secondary);
+            font-size: 1.35rem;
+            margin: 10px 0;
+        }
+
+        .price {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 15px 0;
+        }
+
+        .price small {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .pricing-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+        }
+
+        .pricing-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.93rem;
+        }
+
+        .pricing-card li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 800;
+            margin-right: 8px;
+        }
+
+        .pricing-note {
+            margin-top: 28px;
+            padding: 20px;
+            background: var(--orange-light);
+            border-radius: 12px;
+            color: var(--secondary);
+        }
+
+        /* PAYMENT */
+
+        .payment-box {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .payment-item {
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .payment-item h3 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .payment-item p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        /* CERTIFICATE */
+
+        .certificate-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 38px;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: var(--radius);
+        }
+
+        .certificate-box h3 {
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+        }
+
+        .certificate-box p {
+            color: #d1d5db;
+        }
+
+        .certificate-box ul {
+            list-style: none;
+        }
+
+        .certificate-box li {
+            margin-bottom: 11px;
+            color: #e5e7eb;
+        }
+
+        .certificate-box li::before {
+            content: "✓";
+            color: #fbbf24;
+            margin-right: 9px;
+        }
+
+        /* CAREER */
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .career-item {
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .career-item h3 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .career-item p {
+            color: var(--muted);
+        }
+
+        /* FAQ */
+
+        .faq {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 12px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            color: var(--secondary);
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            float: right;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--muted);
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--light);
+        }
+
+        .cta h2 {
+            color: var(--secondary);
+            font-size: clamp(2rem,4vw,3rem);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+            color: var(--muted);
+        }
+
+        .notice {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 0;
+            color: #d1d5db;
+            text-align: center;
+            background: #030712;
+        }
+
+        footer h3 {
+            color: var(--white);
+            font-size: 1.45rem;
+            margin-bottom: 6px;
+        }
+
+        .footer-program {
+            color: #fbbf24;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 950px) {
+
+            .hero-content,
+            .certificate-box {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3,
+            .pricing-grid,
+            .career-grid,
+            .experience-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .snapshot,
+            .timeline,
+            .payment-box {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .level-card {
+                grid-template-columns: 1fr;
+            }
+
+            .level-number {
+                min-height: 130px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .header-link {
+                display: none;
+            }
+
+            .brand h1 {
+                font-size: 1.25rem;
+            }
+
+            .initiative {
+                font-size: 0.67rem;
+            }
+
+            .header-actions .btn {
+                padding: 10px 13px;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .grid-3,
+            .grid-2,
+            .pricing-grid,
+            .career-grid,
+            .experience-grid,
+            .snapshot,
+            .timeline,
+            .payment-box {
+                grid-template-columns: 1fr;
+            }
+
+            .level-content ul {
+                grid-template-columns: 1fr;
+            }
+
+            .level-card,
+            .experience-box,
+            .list-card,
+            .pricing-card,
+            .certificate-box {
+                padding: 24px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="container header-content">
+
+        <a href="https://openedlabs.eduspace.work" class="brand">
+
+            <h1>openEd Labs</h1>
+
+            <div class="initiative">
+                Professional Learning Series
+            </div>
+
+        </a>
+
+        <div class="header-actions">
+
+            <a href="#curriculum" class="header-link">
+                Curriculum
+            </a>
+
+            <a href="#fees" class="header-link">
+                Fees
+            </a>
+
+            <a href="#apply" class="btn btn-primary">
+                Apply Now
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div>
+
+            <div class="eyebrow">
+                52-Week Professional Program
+            </div>
+
+            <h2>
+                1-Year Professional
+                <span>Software Engineering Accelerator</span>
+            </h2>
+
+            <p class="hero-description">
+
+                A structured, practical program designed to take
+                learners from software engineering foundations to
+                full-stack development, backend systems, cloud,
+                DevOps, Generative AI and enterprise architecture.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#apply" class="btn btn-primary">
+                    Apply for Next Cohort
+                </a>
+
+                <a href="#curriculum" class="btn btn-outline">
+                    Explore Curriculum
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <h3>
+                Program at a Glance
+            </h3>
+
+            <ul>
+
+                <li>
+                    12 Months / 52 Weeks
+                </li>
+
+                <li>
+                    4 Professional Levels
+                </li>
+
+                <li>
+                    4 Major Engineering Projects
+                </li>
+
+                <li>
+                    Full-Stack & Backend Engineering
+                </li>
+
+                <li>
+                    Cloud & DevOps
+                </li>
+
+                <li>
+                    Generative AI Engineering
+                </li>
+
+                <li>
+                    Continuous Practical Assessment
+                </li>
+
+                <li>
+                    Professional Certificate
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAM SNAPSHOT
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="snapshot">
+
+            <div class="snapshot-item">
+
+                <strong>
+                    12
+                </strong>
+
+                <span>
+                    Months
+                </span>
+
+            </div>
+
+
+            <div class="snapshot-item">
+
+                <strong>
+                    52
+                </strong>
+
+                <span>
+                    Weeks
+                </span>
+
+            </div>
+
+
+            <div class="snapshot-item">
+
+                <strong>
+                    4
+                </strong>
+
+                <span>
+                    Professional Levels
+                </span>
+
+            </div>
+
+
+            <div class="snapshot-item">
+
+                <strong>
+                    4
+                </strong>
+
+                <span>
+                    Major Projects
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HIGHLIGHTS
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Program Highlights
+            </div>
+
+            <h2>
+                Learn by Building
+            </h2>
+
+            <p>
+                The program combines structured instruction,
+                practical development, assessment and progressively
+                advanced engineering responsibilities.
+            </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-number">01</div>
+
+                <h3>
+                    Professional Curriculum
+                </h3>
+
+                <p>
+                    Four progressive levels covering modern software
+                    engineering from fundamentals to enterprise architecture.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">02</div>
+
+                <h3>
+                    Project-Based Learning
+                </h3>
+
+                <p>
+                    Build substantial applications instead of relying
+                    only on theoretical learning.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">03</div>
+
+                <h3>
+                    Code Reviews
+                </h3>
+
+                <p>
+                    Receive feedback on code quality, architecture,
+                    testing and maintainability.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">04</div>
+
+                <h3>
+                    Cloud & DevOps
+                </h3>
+
+                <p>
+                    Work with Linux, containers, cloud infrastructure,
+                    CI/CD and deployment workflows.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">05</div>
+
+                <h3>
+                    AI Engineering
+                </h3>
+
+                <p>
+                    Learn to integrate Generative AI, LLM APIs and
+                    AI-assisted development into software systems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">06</div>
+
+                <h3>
+                    Technical Assessment
+                </h3>
+
+                <p>
+                    Progress through practical evaluations, project
+                    reviews and final technical assessment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CURRICULUM
+===================================================== -->
+
+<section id="curriculum">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                52-Week Curriculum
+            </div>
+
+            <h2>
+                Four Professional Levels
+            </h2>
+
+            <p>
+                Each level increases the technical depth and engineering
+                responsibility expected from the learner.
+            </p>
+
+        </div>
+
+
+        <div class="levels">
+
+
+            <!-- LEVEL 100 -->
+
+            <div class="level-card">
+
+                <div class="level-number">
+
+                    <span>Level</span>
+
+                    <strong>100</strong>
+
+                </div>
+
+
+                <div class="level-content">
+
+                    <h3>
+                        Software Engineering Foundations
+                    </h3>
+
+                    <div class="level-subtitle">
+                        Months 1–3 · Build the Engineering Foundation
+                    </div>
+
+                    <ul>
+
+                        <li>Python / JavaScript programming</li>
+
+                        <li>JavaScript & TypeScript</li>
+
+                        <li>HTML & CSS</li>
+
+                        <li>Git & GitHub</li>
+
+                        <li>Data structures & algorithms</li>
+
+                        <li>Object-oriented programming</li>
+
+                        <li>Clean code</li>
+
+                        <li>Software engineering practices</li>
+
+                        <li>SQL & relational databases</li>
+
+                        <li>REST APIs</li>
+
+                    </ul>
+
+
+                    <div class="capstone">
+
+                        <strong>
+                            Capstone:
+                        </strong>
+
+                        Build and deploy a complete full-stack
+                        web application.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL 200 -->
+
+            <div class="level-card">
+
+                <div class="level-number">
+
+                    <span>Level</span>
+
+                    <strong>200</strong>
+
+                </div>
+
+
+                <div class="level-content">
+
+                    <h3>
+                        Full-Stack & Backend Engineering
+                    </h3>
+
+                    <div class="level-subtitle">
+                        Months 4–6 · Build Application & Backend Systems
+                    </div>
+
+                    <ul>
+
+                        <li>React & Next.js</li>
+
+                        <li>Frontend architecture</li>
+
+                        <li>Node.js</li>
+
+                        <li>Python backend development</li>
+
+                        <li>Authentication & authorization</li>
+
+                        <li>PostgreSQL optimization</li>
+
+                        <li>MongoDB</li>
+
+                        <li>Redis</li>
+
+                        <li>GraphQL</li>
+
+                        <li>Message queues & background processing</li>
+
+                    </ul>
+
+
+                    <div class="capstone">
+
+                        <strong>
+                            Capstone:
+                        </strong>
+
+                        Build a distributed real-time application
+                        with APIs, databases, caching and asynchronous processing.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL 300 -->
+
+            <div class="level-card">
+
+                <div class="level-number">
+
+                    <span>Level</span>
+
+                    <strong>300</strong>
+
+                </div>
+
+
+                <div class="level-content">
+
+                    <h3>
+                        Cloud, DevOps & AI Engineering
+                    </h3>
+
+                    <div class="level-subtitle">
+                        Months 7–9 · Deploy & Operate Modern Systems
+                    </div>
+
+                    <ul>
+
+                        <li>Linux administration</li>
+
+                        <li>Docker</li>
+
+                        <li>Kubernetes</li>
+
+                        <li>Cloud architecture</li>
+
+                        <li>AWS / cloud services</li>
+
+                        <li>CI/CD pipelines</li>
+
+                        <li>GitHub Actions</li>
+
+                        <li>Terraform</li>
+
+                        <li>Monitoring & observability</li>
+
+                        <li>Generative AI applications</li>
+
+                    </ul>
+
+
+                    <div class="capstone">
+
+                        <strong>
+                            Capstone:
+                        </strong>
+
+                        Build a cloud-native application with automated
+                        deployment, monitoring and AI functionality.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL 400 -->
+
+            <div class="level-card">
+
+                <div class="level-number">
+
+                    <span>Level</span>
+
+                    <strong>400</strong>
+
+                </div>
+
+
+                <div class="level-content">
+
+                    <h3>
+                        Enterprise Architecture & Production Engineering
+                    </h3>
+
+                    <div class="level-subtitle">
+                        Months 10–12 · Architect Complex Systems
+                    </div>
+
+                    <ul>
+
+                        <li>Large-scale system design</li>
+
+                        <li>Distributed systems</li>
+
+                        <li>Load balancing</li>
+
+                        <li>Database sharding</li>
+
+                        <li>Security architecture</li>
+
+                        <li>OAuth2 & identity systems</li>
+
+                        <li>Reliability engineering</li>
+
+                        <li>Performance engineering</li>
+
+                        <li>Production debugging</li>
+
+                        <li>Architecture documentation</li>
+
+                    </ul>
+
+
+                    <div class="capstone">
+
+                        <strong>
+                            Final Capstone:
+                        </strong>
+
+                        Design, build, deploy and technically defend
+                        a production-grade software system.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAM JOURNEY
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Program Journey
+            </div>
+
+            <h2>
+                Build → Engineer → Deploy → Architect
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="quarter">
+                    Quarter 1
+                </div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    Programming, web development, Git, databases,
+                    APIs and software engineering foundations.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="quarter">
+                    Quarter 2
+                </div>
+
+                <h3>
+                    Engineer
+                </h3>
+
+                <p>
+                    Full-stack applications, backend systems,
+                    databases, caching and distributed processing.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="quarter">
+                    Quarter 3
+                </div>
+
+                <h3>
+                    Deploy
+                </h3>
+
+                <p>
+                    Cloud, Linux, containers, CI/CD, infrastructure
+                    and AI engineering.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="quarter">
+                    Quarter 4
+                </div>
+
+                <h3>
+                    Architect
+                </h3>
+
+                <p>
+                    System design, security, scalability, reliability
+                    and enterprise engineering.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LEARNING FORMAT
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Learning Format
+            </div>
+
+            <h2>
+                How the Program Works
+            </h2>
+
+            <p>
+                The program is designed around a continuous cycle
+                of learning, implementation, review and improvement.
+            </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-number">01</div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Attend structured sessions and study the concepts,
+                    tools and engineering practices required for the level.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">02</div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    Implement assignments and projects using the
+                    technologies covered in the curriculum.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">03</div>
+
+                <h3>
+                    Review
+                </h3>
+
+                <p>
+                    Participate in code reviews, technical discussions
+                    and project feedback.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">04</div>
+
+                <h3>
+                    Deploy
+                </h3>
+
+                <p>
+                    Learn to move applications from development
+                    environments to deployable infrastructure.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">05</div>
+
+                <h3>
+                    Assess
+                </h3>
+
+                <p>
+                    Demonstrate your understanding through practical
+                    technical assessments.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">06</div>
+
+                <h3>
+                    Progress
+                </h3>
+
+                <p>
+                    Advance to the next professional level after
+                    meeting the applicable progression requirements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFESSIONAL EXPERIENCE
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Professional Experience
+            </div>
+
+            <h2>
+                Move Beyond Classroom Projects
+            </h2>
+
+            <p>
+                Advanced stages introduce professional engineering
+                workflows and production-oriented responsibilities.
+            </p>
+
+        </div>
+
+
+        <div class="experience-box">
+
+            <h3>
+                Production Engineering Experience
+            </h3>
+
+            <p>
+                Learners progressively work with professional practices
+                such as version control, pull requests, testing,
+                documentation, deployment, monitoring, technical reviews
+                and architecture discussions.
+            </p>
+
+
+            <div class="experience-grid">
+
+                <div class="experience-item">
+
+                    <strong>
+                        Code Reviews
+                    </strong>
+
+                    <span>
+                        Review implementation quality, maintainability
+                        and architectural decisions.
+                    </span>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <strong>
+                        Team Engineering
+                    </strong>
+
+                    <span>
+                        Work with branches, pull requests,
+                        issue tracking and collaborative workflows.
+                    </span>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <strong>
+                        Deployment
+                    </strong>
+
+                    <span>
+                        Deploy applications and services using
+                        cloud and DevOps workflows.
+                    </span>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <strong>
+                        Documentation
+                    </strong>
+
+                    <span>
+                        Create technical documentation,
+                        architecture diagrams and deployment guides.
+                    </span>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <strong>
+                        Technical Defense
+                    </strong>
+
+                    <span>
+                        Explain design choices and defend technical
+                        decisions during project evaluations.
+                    </span>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <strong>
+                        AI-Assisted Development
+                    </strong>
+
+                    <span>
+                        Use modern AI tools responsibly within
+                        software development workflows.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT IS INCLUDED
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Program Benefits
+            </div>
+
+            <h2>
+                What Is Included
+            </h2>
+
+        </div>
+
+
+        <div class="grid-2">
+
+            <div class="list-card">
+
+                <h3>
+                    Included in the Program
+                </h3>
+
+                <ul class="check-list">
+
+                    <li>
+                        Structured 12-month curriculum
+                    </li>
+
+                    <li>
+                        Four professional levels
+                    </li>
+
+                    <li>
+                        Live instructor-led learning sessions
+                    </li>
+
+                    <li>
+                        Practical assignments
+                    </li>
+
+                    <li>
+                        Four major engineering projects
+                    </li>
+
+                    <li>
+                        Code reviews
+                    </li>
+
+                    <li>
+                        Technical assessments
+                    </li>
+
+                    <li>
+                        Project documentation guidance
+                    </li>
+
+                    <li>
+                        Learning community access
+                    </li>
+
+                    <li>
+                        Final project evaluation
+                    </li>
+
+                    <li>
+                        Professional certificate subject to completion requirements
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="list-card">
+
+                <h3>
+                    Additional Requirements / Costs
+                </h3>
+
+                <ul class="check-list">
+
+                    <li>
+                        Personal laptop or desktop
+                    </li>
+
+                    <li>
+                        Reliable internet connection
+                    </li>
+
+                    <li>
+                        Third-party paid software, where applicable
+                    </li>
+
+                    <li>
+                        Cloud/API usage charges, where applicable
+                    </li>
+
+                    <li>
+                        Optional certification examination, if separately offered
+                    </li>
+
+                    <li>
+                        Any external examination or credential fees
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ELIGIBILITY
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Eligibility
+            </div>
+
+            <h2>
+                Who Can Join?
+            </h2>
+
+            <p>
+                The program is designed for learners at different
+                stages of their software development journey.
+            </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <h3>
+                    Students
+                </h3>
+
+                <p>
+                    Students interested in building practical software
+                    engineering skills alongside their academic education.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Graduates
+                </h3>
+
+                <p>
+                    Graduates seeking structured preparation for
+                    professional software engineering work.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Working Professionals
+                </h3>
+
+                <p>
+                    Professionals seeking to strengthen or modernize
+                    their programming and engineering capabilities.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Career Switchers
+                </h3>
+
+                <p>
+                    Learners transitioning into software development
+                    with the willingness to build skills from the foundation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Existing Developers
+                </h3>
+
+                <p>
+                    Developers who want structured exposure to cloud,
+                    DevOps, AI and architecture.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Independent Builders
+                </h3>
+
+                <p>
+                    Individuals who want to develop stronger engineering
+                    discipline through projects and technical reviews.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PREREQUISITES
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Prerequisites
+            </div>
+
+            <h2>
+                What You Need Before Starting
+            </h2>
+
+        </div>
+
+
+        <div class="grid-2">
+
+            <div class="list-card">
+
+                <h3>
+                    Required
+                </h3>
+
+                <ul class="check-list">
+
+                    <li>
+                        Basic computer literacy
+                    </li>
+
+                    <li>
+                        Access to a laptop or desktop
+                    </li>
+
+                    <li>
+                        Reliable internet connection
+                    </li>
+
+                    <li>
+                        Willingness to learn programming
+                    </li>
+
+                    <li>
+                        Ability to dedicate consistent time each week
+                    </li>
+
+                    <li>
+                        Willingness to complete practical assignments
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="list-card">
+
+                <h3>
+                    Helpful but Not Mandatory
+                </h3>
+
+                <ul class="check-list">
+
+                    <li>
+                        Previous programming experience
+                    </li>
+
+                    <li>
+                        Basic mathematics
+                    </li>
+
+                    <li>
+                        Familiarity with Git
+                    </li>
+
+                    <li>
+                        Basic HTML/CSS knowledge
+                    </li>
+
+                    <li>
+                        Previous project experience
+                    </li>
+
+                    <li>
+                        Computer science fundamentals
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEE STRUCTURE
+===================================================== -->
+
+<section id="fees" class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Fee Structure
+            </div>
+
+            <h2>
+                Flexible Program Enrollment
+            </h2>
+
+            <p>
+                Learners may progress through the professional levels
+                using the applicable enrollment and payment structure.
+            </p>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+
+            <!-- LEVEL 100 -->
+
+            <div class="pricing-card">
+
+                <div class="pricing-label">
+                    Professional Level 100
+                </div>
+
+                <h3>
+                    Software Engineering Foundations
+                </h3>
+
+                <div class="price">
+                    ₹9,500
+                    <small>/ level</small>
+                </div>
+
+                <p>
+                    Months 1–3
+                </p>
+
+                <ul>
+
+                    <li>
+                        Foundations curriculum
+                    </li>
+
+                    <li>
+                        Practical assignments
+                    </li>
+
+                    <li>
+                        Level project
+                    </li>
+
+                    <li>
+                        Technical assessment
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- LEVEL 200 -->
+
+            <div class="pricing-card">
+
+                <div class="pricing-label">
+                    Professional Level 200
+                </div>
+
+                <h3>
+                    Full-Stack & Backend Engineering
+                </h3>
+
+                <div class="price">
+                    ₹9,500
+                    <small>/ level</small>
+                </div>
+
+                <p>
+                    Months 4–6
+                </p>
+
+                <ul>
+
+                    <li>
+                        Full-stack curriculum
+                    </li>
+
+                    <li>
+                        Backend engineering
+                    </li>
+
+                    <li>
+                        Distributed application project
+                    </li>
+
+                    <li>
+                        Technical assessment
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- LEVEL 300 -->
+
+            <div class="pricing-card">
+
+                <div class="pricing-label">
+                    Professional Level 300
+                </div>
+
+                <h3>
+                    Cloud, DevOps & AI Engineering
+                </h3>
+
+                <div class="price">
+                    ₹9,500
+                    <small>/ level</small>
+                </div>
+
+                <p>
+                    Months 7–9
+                </p>
+
+                <ul>
+
+                    <li>
+                        Cloud & DevOps curriculum
+                    </li>
+
+                    <li>
+                        Infrastructure practice
+                    </li>
+
+                    <li>
+                        AI engineering project
+                    </li>
+
+                    <li>
+                        Technical assessment
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- LEVEL 400 -->
+
+            <div class="pricing-card">
+
+                <div class="pricing-label">
+                    Professional Level 400
+                </div>
+
+                <h3>
+                    Enterprise Architecture
+                </h3>
+
+                <div class="price">
+                    ₹9,500
+                    <small>/ level</small>
+                </div>
+
+                <p>
+                    Months 10–12
+                </p>
+
+                <ul>
+
+                    <li>
+                        Advanced architecture
+                    </li>
+
+                    <li>
+                        Distributed systems
+                    </li>
+
+                    <li>
+                        Final enterprise project
+                    </li>
+
+                    <li>
+                        Technical defense
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FULL PROGRAM -->
+
+            <div class="pricing-card featured">
+
+                <div class="pricing-label">
+                    Full Accelerator
+                </div>
+
+                <h3>
+                    12-Month Professional Program
+                </h3>
+
+                <div class="price">
+                    ₹XX,XXX
+                </div>
+
+                <p>
+                    Full 52-week enrollment
+                </p>
+
+                <ul>
+
+                    <li>
+                        All four professional levels
+                    </li>
+
+                    <li>
+                        Four major projects
+                    </li>
+
+                    <li>
+                        Complete curriculum
+                    </li>
+
+                    <li>
+                        Continuous assessment
+                    </li>
+
+                    <li>
+                        Code reviews
+                    </li>
+
+                    <li>
+                        Final project evaluation
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CERTIFICATION -->
+
+            <div class="pricing-card">
+
+                <div class="pricing-label">
+                    Optional Assessment
+                </div>
+
+                <h3>
+                    Professional Certification
+                </h3>
+
+                <div class="price">
+                    ₹1,000
+                    <small>/ exam</small>
+                </div>
+
+                <p>
+                    Where applicable
+                </p>
+
+                <ul>
+
+                    <li>
+                        Final certification assessment
+                    </li>
+
+                    <li>
+                        Practical evaluation
+                    </li>
+
+                    <li>
+                        Technical review
+                    </li>
+
+                    <li>
+                        Certificate subject to requirements
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="pricing-note">
+
+            <strong>
+                Important:
+            </strong>
+
+            The final annual package price, installment options,
+            discounts and cohort-specific offers may vary.
+            Contact openEd Labs for the current enrollment structure.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAYMENT OPTIONS
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Payment Options
+            </div>
+
+            <h2>
+                Choose the Enrollment Structure
+            </h2>
+
+        </div>
+
+
+        <div class="payment-box">
+
+            <div class="payment-item">
+
+                <h3>
+                    Level-Wise
+                </h3>
+
+                <p>
+                    Enroll and pay for each professional level
+                    separately as you progress through the program.
+                </p>
+
+            </div>
+
+
+            <div class="payment-item">
+
+                <h3>
+                    Full Program
+                </h3>
+
+                <p>
+                    Enroll for the complete 12-month accelerator
+                    under the applicable annual package.
+                </p>
+
+            </div>
+
+
+            <div class="payment-item">
+
+                <h3>
+                    Installments
+                </h3>
+
+                <p>
+                    Structured payment plans may be available
+                    depending on the cohort and enrollment terms.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ASSESSMENT
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Assessment
+            </div>
+
+            <h2>
+                Progress Is Demonstrated Through Work
+            </h2>
+
+            <p>
+                Assessment focuses on practical implementation,
+                technical understanding and the ability to explain
+                engineering decisions.
+            </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+            <div class="card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Coding Assignments
+                </h3>
+
+                <p>
+                    Regular programming and implementation exercises
+                    aligned with the current level.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Project Evaluation
+                </h3>
+
+                <p>
+                    Assessment of functionality, architecture,
+                    code quality and documentation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Code Review
+                </h3>
+
+                <p>
+                    Review of implementation decisions,
+                    maintainability and engineering practices.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <h3>
+                    Technical Discussion
+                </h3>
+
+                <p>
+                    Explain your implementation and demonstrate
+                    understanding of the underlying concepts.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    05
+                </div>
+
+                <h3>
+                    Architecture Review
+                </h3>
+
+                <p>
+                    Advanced learners evaluate scalability,
+                    reliability, security and technical trade-offs.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    06
+                </div>
+
+                <h3>
+                    Final Evaluation
+                </h3>
+
+                <p>
+                    Final project and technical defense demonstrate
+                    the skills developed during the program.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATION
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="certificate-box">
+
+            <div>
+
+                <div class="section-label">
+                    Certification
+                </div>
+
+                <h3>
+                    Professional Software Engineering Certification
+                </h3>
+
+                <p>
+                    Participants who meet the applicable program
+                    completion and assessment requirements may receive
+                    a professional certificate issued by openEd Labs.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <ul>
+
+                    <li>
+                        Completion of required program components
+                    </li>
+
+                    <li>
+                        Required project submissions
+                    </li>
+
+                    <li>
+                        Applicable assessments
+                    </li>
+
+                    <li>
+                        Final project evaluation
+                    </li>
+
+                    <li>
+                        Technical requirements as defined for the cohort
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CAREER PATHWAYS
+===================================================== -->
+
+<section class="light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Career Pathways
+            </div>
+
+            <h2>
+                Skills for Multiple Engineering Roles
+            </h2>
+
+            <p>
+                The curriculum develops a broad engineering foundation
+                applicable to several technology roles.
+            </p>
+
+        </div>
+
+
+        <div class="career-grid">
+
+            <div class="career-item">
+
+                <h3>
+                    Full-Stack Developer
+                </h3>
+
+                <p>
+                    Frontend, backend, databases, APIs and application deployment.
+                </p>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <h3>
+                    Backend Engineer
+                </h3>
+
+                <p>
+                    APIs, services, databases, distributed systems and backend architecture.
+                </p>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <h3>
+                    Cloud / DevOps Engineer
+                </h3>
+
+                <p>
+                    Infrastructure, containers, CI/CD, cloud and deployment systems.
+                </p>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <h3>
+                    Software Engineer
+                </h3>
+
+                <p>
+                    Software development, testing, architecture and engineering practices.
+                </p>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <h3>
+                    AI Application Engineer
+                </h3>
+
+                <p>
+                    LLMs, AI APIs and intelligent capabilities integrated into software systems.
+                </p>
+
+            </div>
+
+
+            <div class="career-item">
+
+                <h3>
+                    Systems / Solution Architect
+                </h3>
+
+                <p>
+                    System design, scalability, security and architecture decisions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Frequently Asked Questions
+            </div>
+
+            <h2>
+                Program FAQ
+            </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+
+            <details>
+
+                <summary>
+                    Is this a university degree?
+                </summary>
+
+                <div class="faq-answer">
+
+                    No. The program is an independent professional
+                    learning and qualification program offered by
+                    openEd Labs. It does not confer a university degree.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Do I need prior programming experience?
+                </summary>
+
+                <div class="faq-answer">
+
+                    Advanced programming experience is not required
+                    for Level 100. Participants should have basic
+                    computer literacy and the willingness to learn
+                    programming consistently.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can I join only one level?
+                </summary>
+
+                <div class="faq-answer">
+
+                    Level-wise enrollment may be available depending
+                    on the cohort structure and the participant's
+                    existing skills. Admission requirements may vary.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is the program online?
+                </summary>
+
+                <div class="faq-answer">
+
+                    The program is designed for online professional
+                    learning. The exact delivery schedule, session
+                    frequency and cohort format are communicated
+                    during enrollment.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Are projects included in the fee?
+                </summary>
+
+                <div class="faq-answer">
+
+                    The program curriculum includes practical projects
+                    and capstone work. Any third-party software,
+                    infrastructure or API charges, where applicable,
+                    may be separate.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is a job guaranteed after completion?
+                </summary>
+
+                <div class="faq-answer">
+
+                    No employment or placement outcome is guaranteed.
+                    The program is designed to develop practical skills,
+                    projects and professional capabilities that learners
+                    can use in their own career development.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    What certificate will I receive?
+                </summary>
+
+                <div class="faq-answer">
+
+                    Participants meeting the applicable completion and
+                    assessment requirements may receive a professional
+                    certificate issued by openEd Labs.
+
+                </div>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can the fee be paid in installments?
+                </summary>
+
+                <div class="faq-answer">
+
+                    Structured payment options may be available depending
+                    on the cohort. Contact openEd Labs for the current
+                    payment structure.
+
+                </div>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section id="apply" class="cta">
+
+    <div class="container">
+
+        <div class="section-label">
+            Admissions Open
+        </div>
+
+        <h2>
+            Ready to Build Your Engineering Career?
+        </h2>
+
+        <p>
+
+            Start with the foundations, build real systems,
+            learn cloud and AI engineering, and progress toward
+            enterprise-level software architecture.
+
+        </p>
+
+
+        <div
+            class="hero-buttons"
+            style="justify-content:center;"
+        >
+
+            <a
+                href="https://openedlabs.eduspace.work"
+                class="btn btn-primary"
+            >
+                Apply for Next Cohort
+            </a>
+
+
+            <a
+                href="https://openedlabs.eduspace.work"
+                class="btn btn-outline"
+            >
+                Visit openEd Labs
+            </a>
+
+        </div>
+
+
+        <div class="notice">
+
+            Cohort size, schedule, eligibility, fees and assessment
+            requirements may vary by intake.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            openEd Labs
+        </h3>
+
+        <div class="footer-program">
+            1-Year Professional Software Engineering Accelerator
+        </div>
+
+        <p>
+            Learn • Build • Deploy • Innovate
+        </p>
+
+        <p>
+            https://openedlabs.eduspace.work
+        </p>
+
+        <p>
+            © 2026 openEd Labs. All Rights Reserved.
+        </p>
+
+        <p>
+            This is an independent professional learning and
+            qualification program and is not a university
+            degree-granting program.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
