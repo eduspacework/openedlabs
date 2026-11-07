@@ -1,0 +1,289 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenEd Labs — Startup Landing</title>
+  <meta name="description" content="OpenEd Labs creates open educational curriculum, assessments, and educator support to expand equitable learning opportunities." />
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:rgba(255,255,255,.06);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --muted-2:rgba(255,255,255,.55);
+      --accent:#22c55e;
+      --accent-2:#06b6d4;
+      --shadow: 0 18px 60px rgba(0,0,0,.38);
+      --radius:16px;
+      --maxw:1100px;
+      --ff: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background:
+        radial-gradient(1100px 480px at 12% 10%, rgba(34,197,94,.20), transparent 55%),
+        radial-gradient(900px 420px at 85% 12%, rgba(6,182,212,.18), transparent 55%),
+        radial-gradient(900px 520px at 60% 95%, rgba(59,130,246,.15), transparent 60%),
+        linear-gradient(180deg, #070A12, #050713 65%, #040611);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:26px 18px 40px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 0 22px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(6,182,212,.9));
+      box-shadow:0 14px 30px rgba(34,197,94,.18);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;letter-spacing:.4px;
+    }
+    .brand h1{margin:0;font-size:15px;letter-spacing:.2px}
+    .brand p{margin:2px 0 0 0;font-size:12px;color:var(--muted-2)}
+    .hero{
+      display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;
+      margin-top:6px;
+    }
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr;gap:14px} }
+    .panel{
+      background:linear-gradient(180deg, var(--panel), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-left{padding:26px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:7px 12px;border-radius:999px;
+      border:1px solid rgba(34,197,94,.22);
+      background:rgba(34,197,94,.10);
+      color:rgba(255,255,255,.86);
+      font-weight:700;font-size:12px;letter-spacing:.2px;
+    }
+    .spark{
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(180deg, var(--accent), var(--accent-2));
+      box-shadow:0 0 0 6px rgba(34,197,94,.13);
+    }
+    .headline{
+      margin:14px 0 10px;font-size:44px;line-height:1.04;letter-spacing:-.8px;
+    }
+    @media (max-width: 520px){ .headline{font-size:34px} }
+    .lead{margin:0;color:var(--muted);font-size:16px;line-height:1.6;max-width:60ch}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:800;letter-spacing:.2px;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.08)}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(6,182,212,.90));
+      border-color:rgba(34,197,94,.35);
+      box-shadow:0 16px 30px rgba(34,197,94,.14);
+    }
+    .badges{
+      margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;
+      color:var(--muted-2);font-size:12px;
+    }
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .hero-right{padding:18px}
+    .right-top{
+      padding:14px;border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .right-top h3{margin:0 0 8px;font-size:14px}
+    .right-top p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+    .features{margin-top:12px;display:grid;gap:10px}
+    .feature{
+      padding:12px;border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex;gap:10px;align-items:flex-start;
+    }
+    .check{
+      width:26px;height:26px;border-radius:10px;
+      background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.25);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color:rgba(255,255,255,.90);
+      flex:0 0 auto;
+    }
+    .feature b{display:block;font-size:13px;margin-top:1px}
+    .feature span{display:block;color:var(--muted-2);font-size:12.5px;margin-top:3px;line-height:1.45}
+    .section{margin-top:18px;padding:22px}
+    .section h2{margin:0 0 12px;font-size:18px;letter-spacing:-.2px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width: 920px){ .cards{grid-template-columns:1fr;} }
+    .card{
+      padding:16px;border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .card h3{margin:10px 0 6px;font-size:14.5px}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+    .footer{
+      margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10);
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      color:var(--muted-2);font-size:12.5px;align-items:center;
+    }
+    .footer a{
+      color:rgba(255,255,255,.78);
+      text-decoration:underline;
+      text-decoration-color: rgba(255,255,255,.25);
+      text-underline-offset:3px;
+    }
+    .divider{
+      height:1px;
+      background:linear-gradient(90deg, rgba(34,197,94,.0), rgba(34,197,94,.35), rgba(6,182,212,.35), rgba(6,182,212,.0));
+      margin:14px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-label="OpenEd Labs">
+        <div class="logo" aria-hidden="true">OE</div>
+        <div>
+          <h1>OpenEd Labs</h1>
+          <p>Open learning • built for real classrooms</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <section class="panel hero-left">
+          <div class="eyebrow"><span class="spark" aria-hidden="true"></span>Open education, made practical</div>
+          <h2 class="headline">Free curriculum & assessments—ready to adapt.</h2>
+          <p class="lead">
+            OpenEd Labs creates open educational resources—curriculum, formative assessments, and educator support—so schools
+            and communities can learn, adapt, and improve at no cost.
+          </p>
+
+            <div class="cta-row" role="group" aria-label="Primary actions">
+              <button class="btn primary" type="button" onclick="window.location.href='#contact'">
+                Get Updates <span class="arrow">→</span>
+              </button>
+              <a class="btn" href="mailto:openedlabs@gmail.com?subject=OpenEd%20Labs%20Updates">Email Us</a>
+            </div>
+
+          <div class="badges" aria-label="Highlights">
+            <span class="pill">No paywalls</span>
+            <span class="pill">Teacher-ready</span>
+            <span class="pill">Equity & accessibility</span>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+        </section>
+
+        <aside class="panel hero-right" aria-label="How we work">
+          <div class="right-top">
+            <h3>What we focus on</h3>
+            <p>
+              We build learning materials that work in practice—paired with guidance so educators can implement confidently.
+              Downloads are not enabled right now; this page is for awareness and future access.
+            </p>
+          </div>
+
+          <div class="features" aria-label="Key capabilities">
+            <div class="feature">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <b>Open curriculum</b>
+                <span>Unit packages that educators can adapt for their context.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <b>Accessible assessments</b>
+                <span>Formative checks and rubrics aligned to learning goals.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="check" aria-hidden="true">✓</div>
+              <div>
+                <b>Community implementation support</b>
+                <span>Guides and collaboration to improve materials over time.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="panel section" aria-label="Core offerings">
+        <h2>Built for educators</h2>
+        <div class="cards">
+          <div class="card">
+            <div style="height:10px;width:54px;border-radius:999px;background:linear-gradient(90deg, rgba(34,197,94,.9), rgba(6,182,212,.7));"></div>
+            <h3>Curriculum that’s easy to start</h3>
+            <p>Clear lesson structure, student materials, and guidance—so teams can begin quickly.</p>
+          </div>
+
+          <div class="card">
+            <div style="height:10px;width:54px;border-radius:999px;background:linear-gradient(90deg, rgba(6,182,212,.85), rgba(59,130,246,.75));"></div>
+            <h3>Assessments with actionable feedback</h3>
+            <p>Formative tools designed to support instructional decisions and differentiated learning.</p>
+          </div>
+
+          <div class="card">
+            <div style="height:10px;width:54px;border-radius:999px;background:linear-gradient(90deg, rgba(59,130,246,.85), rgba(34,197,94,.75));"></div>
+            <h3>Equity-first learning design</h3>
+            <p>Accessible, culturally relevant materials that work across diverse learner needs.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section panel" aria-label="Get updates">
+        <h2>Want to be notified when resources go live?</h2>
+        <p class="lead" style="margin:0;color:var(--muted);font-size:14.5px;max-width:70ch">
+          Drop your email/role in your internal workflow or update this section with your newsletter or contact form when ready.
+          (No downloads or link-out resources are provided yet.)
+        </p>
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn primary" href="mailto:openedlabs@gmail.com?subject=OpenEd%20Labs%20Updates">
+            Contact us <span class="arrow">→</span>
+          </a>
+          <button class="btn" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            Back to top
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="Footer">
+      <div>© OpenEd Labs</div>
+      <div>
+        Website: <a href="https://openedlabs.eduspace.work" target="_blank" rel="noopener">openedlabs.eduspace.work</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>openEd Labs | Business Development Executive Assessment</title>
+
+<meta
+    name="description"
+    content="Business Development Executive assessment for openEd Labs. Research a target academic institution, identify decision-makers, create a cold outreach strategy, handle objections, and pitch openEd Labs."
+>
+
+<style>
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --primary: #6c63ff;
+    --primary-dark: #5148d8;
+
+    --cyan: #00d4ff;
+
+    --dark: #101321;
+    --dark-light: #1b2040;
+
+    --text: #252a40;
+    --muted: #6b7388;
+
+    --light: #f7f8fc;
+    --white: #ffffff;
+
+    --border: #e5e7f0;
+
+    --green: #15936d;
+    --orange: #ff9f43;
+
+    --radius: 18px;
+
+    --shadow:
+        0 18px 45px rgba(28, 34, 70, 0.10);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border: 2px solid transparent;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.25s ease;
+
+    cursor: pointer;
+}
+
+.btn-primary {
+
+    color: var(--white);
+
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+
+    color: var(--white);
+
+    border-color: rgba(255,255,255,0.45);
+}
+
+.btn-outline:hover {
+
+    color: var(--dark);
+
+    background: var(--white);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+
+    color: var(--dark);
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
+
+    color: #555d73;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.nav-links a {
+
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+
+    color: var(--primary);
+}
+
+.nav-apply {
+
+    padding: 9px 17px;
+
+    border-radius: 999px;
+
+    color: var(--white) !important;
+
+    background: var(--primary);
+}
+
+.nav-apply:hover {
+
+    color: var(--white) !important;
+
+    background: var(--primary-dark);
+}
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--dark);
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 100px 0 115px;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,212,255,0.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(108,99,255,0.30),
+            transparent 33%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--dark),
+            var(--dark-light)
+        );
+}
+
+.hero::before {
+
+    content: "BD";
+
+    position: absolute;
+
+    right: 7%;
+
+    bottom: 0;
+
+    color: rgba(255,255,255,0.04);
+
+    font-size: 210px;
+
+    font-weight: 900;
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 850px;
+}
+
+.hero-label {
+
+    margin-bottom: 15px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+
+    max-width: 850px;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(40px, 6vw, 68px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero-description {
+
+    max-width: 750px;
+
+    margin-bottom: 32px;
+
+    color: #c9cee2;
+
+    font-size: 18px;
+}
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   SNAPSHOT
+========================= */
+
+.snapshot-wrapper {
+
+    margin-top: -55px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.snapshot-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.snapshot {
+
+    padding: 25px 22px;
+
+    border-right: 1px solid var(--border);
+}
+
+.snapshot:last-child {
+    border-right: none;
+}
+
+.snapshot strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+}
+
+.snapshot span {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    padding: 100px 0 85px;
+}
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.section-label {
+
+    margin-bottom: 12px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.section-title {
+
+    margin-bottom: 17px;
+
+    color: var(--dark);
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    line-height: 1.15;
+}
+
+.intro-text p {
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.intro-card {
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(108,99,255,0.95),
+            rgba(0,180,215,0.90)
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.intro-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 28px;
+}
+
+.intro-card p {
+
+    color: #eefcff;
+}
+
+.intro-card ul {
+
+    margin-top: 20px;
+
+    padding-left: 20px;
+
+    color: #eefcff;
+}
+
+.intro-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   TASK SECTION
+========================= */
+
+.task-section {
+
+    padding: 95px 0;
+
+    background: var(--light);
+}
+
+.section-heading {
+
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.section-heading .section-text {
+
+    max-width: 730px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   TASK CARDS
+========================= */
+
+.task-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.task-card {
+
+    position: relative;
+
+    padding: 32px 28px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    transition: 0.25s ease;
+}
+
+.task-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--cyan)
+        );
+}
+
+.task-card:hover {
+
+    box-shadow: var(--shadow);
+
+    transform: translateY(-5px);
+}
+
+.task-number {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    color: var(--white);
+
+    background: var(--primary);
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.task-card h3 {
+
+    margin-bottom: 12px;
+
+    color: var(--dark);
+
+    font-size: 21px;
+}
+
+.task-card p {
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 14.5px;
+}
+
+.task-card ul {
+
+    padding-left: 20px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.task-card li {
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   REQUIREMENTS
+========================= */
+
+.requirements {
+
+    padding: 95px 0;
+}
+
+.requirement-box {
+
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.requirement-box h3 {
+
+    margin-bottom: 20px;
+
+    color: var(--dark);
+
+    font-size: 26px;
+}
+
+.requirement-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px 30px;
+
+    list-style: none;
+}
+
+.requirement-list li {
+
+    position: relative;
+
+    padding-left: 30px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.requirement-list li::before {
+
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 1px;
+
+    width: 21px;
+
+    height: 21px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--green);
+
+    background: #dff8ef;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   OUTREACH
+========================= */
+
+.outreach {
+
+    padding: 95px 0;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(108,99,255,0.25),
+            transparent 30%
+        ),
+
+        var(--dark);
+}
+
+.outreach .section-label {
+    color: var(--cyan);
+}
+
+.outreach .section-title {
+    color: var(--white);
+}
+
+.outreach-intro {
+
+    max-width: 750px;
+
+    color: #c2c8dc;
+
+    font-size: 17px;
+}
+
+.outreach-grid {
+
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.outreach-card {
+
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,0.04);
+}
+
+.outreach-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
+}
+
+.outreach-card p {
+
+    color: #b8bfd4;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   WORD LIMIT
+========================= */
+
+.word-limit {
+
+    display: inline-flex;
+
+    margin-top: 15px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    color: var(--cyan);
+
+    background: rgba(0,212,255,0.10);
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   RUBRIC
+========================= */
+
+.rubric {
+
+    padding: 95px 0;
+
+    background: var(--light);
+}
+
+.rubric-table {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.rubric-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        2fr
+        0.5fr;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.rubric-row:last-child {
+    border-bottom: none;
+}
+
+.rubric-row > div {
+
+    padding: 20px;
+
+    border-right: 1px solid var(--border);
+}
+
+.rubric-row > div:last-child {
+    border-right: none;
+}
+
+.rubric-header {
+
+    color: var(--white);
+
+    background: var(--dark);
+
+    font-weight: bold;
+}
+
+.rubric-score {
+
+    color: var(--primary);
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   SUBMISSION
+========================= */
+
+.submission {
+
+    padding: 95px 0;
+}
+
+.submission-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+.submission-card {
+
+    padding: 38px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.submission-card h3 {
+
+    margin-bottom: 12px;
+
+    color: var(--dark);
+
+    font-size: 25px;
+}
+
+.submission-card p {
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+.submission-card ul {
+
+    margin-top: 20px;
+
+    padding-left: 20px;
+
+    color: var(--muted);
+}
+
+.submission-card li {
+
+    margin-bottom: 9px;
+}
+
+.info-card {
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+}
+
+.info-card h3 {
+
+    margin-bottom: 14px;
+
+    font-size: 25px;
+}
+
+.info-card p {
+
+    color: #e7e8ff;
+
+    font-size: 14px;
+}
+
+.info-item {
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+.info-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+.info-item span {
+
+    color: #d7d9f5;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+
+    padding: 95px 0;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+}
+
+.cta-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.cta h2 {
+
+    max-width: 680px;
+
+    margin-bottom: 14px;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    line-height: 1.15;
+}
+
+.cta p {
+
+    max-width: 680px;
+
+    color: #e7e8ff;
+}
+
+.cta .btn-primary {
+
+    flex: 0 0 auto;
+
+    color: var(--dark);
+
+    background: var(--white);
+}
+
+.cta .btn-primary:hover {
+
+    background: #f0f1ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 27px 0;
+
+    color: #abb2c9;
+
+    background: #0b0e1a;
+
+    font-size: 13px;
+}
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-brand {
+
+    color: var(--white);
+
+    font-weight: bold;
+}
+
+.footer-links {
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .snapshot-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .snapshot {
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .task-grid,
+    .outreach-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .submission-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 12px 4%;
+
+        border-bottom: 1px solid var(--border);
+
+        background: var(--white);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 0;
+    }
+
+    .nav-apply {
+
+        width: auto !important;
+
+        padding: 9px 17px !important;
+    }
+
+    .hero {
+
+        padding: 75px 0 100px;
+    }
+
+    .hero h1 {
+
+        letter-spacing: -1px;
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .snapshot-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .snapshot {
+
+        border-right: none;
+    }
+
+    .requirement-list {
+
+        grid-template-columns: 1fr;
+    }
+
+    .rubric-table {
+
+        overflow-x: auto;
+    }
+
+    .rubric-row {
+
+        min-width: 700px;
+    }
+
+    .cta-inner {
+
+        display: block;
+    }
+
+    .cta .btn {
+
+        width: auto;
+
+        margin-top: 25px;
+    }
+
+    .footer-inner {
+
+        display: block;
+
+        text-align: center;
+    }
+
+    .footer-links {
+
+        justify-content: center;
+
+        margin-top: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+    .intro-card,
+    .submission-card,
+    .info-card {
+
+        padding: 30px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            openEd<span> Labs</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Toggle navigation"
+        >
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#assessment">Assessment</a>
+            </li>
+
+            <li>
+                <a href="#task">Task</a>
+            </li>
+
+            <li>
+                <a href="#rubric">Evaluation</a>
+            </li>
+
+            <li>
+                <a href="#submission">Submission</a>
+            </li>
+
+            <li>
+                <a
+                    href="https://openedlabs.eduspace.work"
+                    target="_blank"
+                    class="nav-apply"
+                >
+                    openEd Labs
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero" id="assessment">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                Business Development Executive Assessment
+            </div>
+
+            <h1>
+                Turn a target account into a
+                <span>real opportunity.</span>
+            </h1>
+
+            <p class="hero-description">
+                Demonstrate how you research academic institutions,
+                identify decision-makers, create personalized outreach,
+                handle objections, and communicate the value of openEd Labs.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="#task"
+                    class="btn btn-primary"
+                >
+                    View Assessment
+                </a>
+
+                <a
+                    href="#rubric"
+                    class="btn btn-outline"
+                >
+                    Evaluation Criteria
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     SNAPSHOT
+========================= -->
+
+<section class="snapshot-wrapper">
+
+    <div class="container">
+
+        <div class="snapshot-grid">
+
+            <div class="snapshot">
+
+                <strong>1 Target</strong>
+
+                <span>
+                    Academic institution or training provider
+                </span>
+
+            </div>
+
+
+            <div class="snapshot">
+
+                <strong>2 Decision-Makers</strong>
+
+                <span>
+                    Identify relevant senior personas
+                </span>
+
+            </div>
+
+
+            <div class="snapshot">
+
+                <strong>3 Sales Tasks</strong>
+
+                <span>
+                    Outreach, objection handling &amp; pitch
+                </span>
+
+            </div>
+
+
+            <div class="snapshot">
+
+                <strong>15-Minute CTA</strong>
+
+                <span>
+                    Your objective is to secure a discovery meeting
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="intro-text">
+
+                <div class="section-label">
+                    Your Objective
+                </div>
+
+                <h2 class="section-title">
+                    Think like a Business Development Executive.
+                </h2>
+
+                <p>
+                    openEd Labs is expanding its footprint among
+                    academic institutions, universities, colleges,
+                    and training organizations.
+                </p>
+
+                <p>
+                    Your objective is to identify a high-value prospect,
+                    understand who can influence a potential engagement,
+                    and create a credible path toward an initial
+                    discovery conversation.
+                </p>
+
+            </div>
+
+
+            <div class="intro-card">
+
+                <h3>
+                    The outcome we want
+                </h3>
+
+                <p>
+                    We are not looking for a generic sales pitch.
+                    We want to see whether you can research an account,
+                    understand its potential needs, personalize your
+                    communication, and create enough relevance to earn
+                    a 15-minute conversation.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Research before reaching out.
+                    </li>
+
+                    <li>
+                        Identify the right decision-makers.
+                    </li>
+
+                    <li>
+                        Lead with business value.
+                    </li>
+
+                    <li>
+                        Handle resistance without being pushy.
+                    </li>
+
+                    <li>
+                        Ask for a specific next step.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TASK
+========================= -->
+
+<section class="task-section" id="task">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                The Assessment
+            </div>
+
+            <h2 class="section-title">
+                Your Business Development Challenge
+            </h2>
+
+            <p class="section-text">
+                Select one real academic institution or training provider
+                that you believe could be a strong potential client for
+                openEd Labs. Then complete all five steps below.
+            </p>
+
+        </div>
+
+
+        <div class="task-grid">
+
+
+            <!-- TASK 1 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    01
+                </div>
+
+                <h3>
+                    Target Account &amp; Persona Identification
+                </h3>
+
+                <p>
+                    Select one real academic institution or training
+                    provider.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Institution name
+                    </li>
+
+                    <li>
+                        Official website link
+                    </li>
+
+                    <li>
+                        Two relevant decision-makers
+                    </li>
+
+                    <li>
+                        Full name and job title
+                    </li>
+
+                    <li>
+                        LinkedIn URL
+                    </li>
+
+                    <li>
+                        Calculated / inferred email pattern
+                    </li>
+
+                    <li>
+                        Two sentences explaining why the institution
+                        is a strong fit for openEd Labs
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- TASK 2 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    02
+                </div>
+
+                <h3>
+                    Initial Cold Outreach
+                </h3>
+
+                <p>
+                    Write the actual cold email you would send to one
+                    of your selected decision-makers.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Include a compelling subject line
+                    </li>
+
+                    <li>
+                        Personalize the message
+                    </li>
+
+                    <li>
+                        Focus on relevance and value
+                    </li>
+
+                    <li>
+                        Avoid a generic feature dump
+                    </li>
+
+                    <li>
+                        End with a clear call-to-action
+                    </li>
+
+                </ul>
+
+                <span class="word-limit">
+                    Maximum 150 words
+                </span>
+
+            </article>
+
+
+            <!-- TASK 3 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    03
+                </div>
+
+                <h3>
+                    Handling the Resistance
+                </h3>
+
+                <p>
+                    Assume the prospect responds:
+                </p>
+
+                <p>
+                    <strong>
+                        “We already use an existing platform /
+                        in-house solution and aren't looking to
+                        add or switch tools right now.”
+                    </strong>
+                </p>
+
+                <p>
+                    Write your exact email response.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Do not argue with the prospect
+                    </li>
+
+                    <li>
+                        Reframe openEd Labs as complementary
+                    </li>
+
+                    <li>
+                        Demonstrate understanding of their situation
+                    </li>
+
+                    <li>
+                        Create a reason to continue the conversation
+                    </li>
+
+                    <li>
+                        Ask for a 15-minute introductory call
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- TASK 4 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    04
+                </div>
+
+                <h3>
+                    60-Second Elevator Pitch
+                </h3>
+
+                <p>
+                    Pitch openEd Labs directly to the decision-maker
+                    as if you were speaking to them on a discovery call
+                    or introductory video.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Record a 60–90 second Loom video
+                    </li>
+
+                    <li>
+                        OR provide a verbal script of approximately
+                        100 words
+                    </li>
+
+                    <li>
+                        Make it conversational and customer-centric
+                    </li>
+
+                    <li>
+                        Explain why a conversation is worth their time
+                    </li>
+
+                    <li>
+                        Finish with a meeting request
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- TASK 5 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    05
+                </div>
+
+                <h3>
+                    Research Quality
+                </h3>
+
+                <p>
+                    Your research should demonstrate that you selected
+                    the account and personas intentionally rather than
+                    randomly.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Use reliable public sources
+                    </li>
+
+                    <li>
+                        Verify the institution's current website
+                    </li>
+
+                    <li>
+                        Verify decision-maker roles
+                    </li>
+
+                    <li>
+                        Use LinkedIn for professional verification
+                    </li>
+
+                    <li>
+                        Clearly distinguish verified information from
+                        an inferred email pattern
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- TASK 6 -->
+
+            <article class="task-card">
+
+                <div class="task-number">
+                    06
+                </div>
+
+                <h3>
+                    Think Beyond the First Email
+                </h3>
+
+                <p>
+                    Your submission should show that you understand
+                    business development as a conversation rather than
+                    simply sending an email.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Identify a meaningful institutional problem
+                    </li>
+
+                    <li>
+                        Connect that problem to openEd Labs
+                    </li>
+
+                    <li>
+                        Keep the prospect's priorities central
+                    </li>
+
+                    <li>
+                        Handle objections professionally
+                    </li>
+
+                    <li>
+                        Create a logical next step
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REQUIREMENTS
+========================= -->
+
+<section class="requirements">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Submission Requirements
+            </div>
+
+            <h2 class="section-title">
+                What Your Submission Should Contain
+            </h2>
+
+        </div>
+
+
+        <div class="requirement-box">
+
+            <h3>
+                Submit one concise strategy brief
+            </h3>
+
+            <ul class="requirement-list">
+
+                <li>
+                    Target institution and official website
+                </li>
+
+                <li>
+                    Two decision-makers with roles
+                </li>
+
+                <li>
+                    LinkedIn URLs
+                </li>
+
+                <li>
+                    Calculated email patterns
+                </li>
+
+                <li>
+                    Two-sentence account-fit explanation
+                </li>
+
+                <li>
+                    Cold email under 150 words
+                </li>
+
+                <li>
+                    Objection-handling response
+                </li>
+
+                <li>
+                    60–90 second Loom video or ~100-word script
+                </li>
+
+                <li>
+                    Sources used for research
+                </li>
+
+                <li>
+                    Clear 15-minute discovery-meeting CTA
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     OUTREACH
+========================= -->
+
+<section class="outreach">
+
+    <div class="container">
+
+        <div class="section-label">
+            Sales Execution
+        </div>
+
+        <h2 class="section-title">
+            Show us how you would start the conversation.
+        </h2>
+
+        <p class="outreach-intro">
+            The purpose of the exercise is not to sell everything
+            openEd Labs does. The purpose is to demonstrate that you
+            can identify a relevant business opportunity and earn
+            the right to have a deeper conversation.
+        </p>
+
+
+        <div class="outreach-grid">
+
+
+            <div class="outreach-card">
+
+                <h3>
+                    Your Cold Email
+                </h3>
+
+                <p>
+                    Write the exact message you would send. Keep it
+                    concise, specific to the institution, and focused
+                    on a relevant opportunity rather than listing
+                    every openEd Labs service.
+                </p>
+
+                <span class="word-limit">
+                    Maximum 150 words
+                </span>
+
+            </div>
+
+
+            <div class="outreach-card">
+
+                <h3>
+                    Your Objection Response
+                </h3>
+
+                <p>
+                    The prospect already has a platform or internal
+                    solution. Your response should position openEd Labs
+                    as an additional capability or potential partner,
+                    not force the prospect into a platform replacement.
+                </p>
+
+            </div>
+
+
+            <div class="outreach-card">
+
+                <h3>
+                    Your CTA
+                </h3>
+
+                <p>
+                    Your objective is to secure a short introductory
+                    conversation. Ask for a specific 15-minute meeting
+                    rather than an open-ended “let me know if you're
+                    interested.”
+                </p>
+
+            </div>
+
+
+            <div class="outreach-card">
+
+                <h3>
+                    Your Pitch
+                </h3>
+
+                <p>
+                    Explain openEd Labs naturally, as if you were
+                    speaking directly to your selected decision-maker.
+                    Focus on their potential needs and why a conversation
+                    could be worthwhile.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RUBRIC
+========================= -->
+
+<section class="rubric" id="rubric">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Evaluation
+            </div>
+
+            <h2 class="section-title">
+                How Your Assessment Will Be Evaluated
+            </h2>
+
+            <p class="section-text">
+                We will assess the quality of your thinking, research,
+                communication, and sales approach.
+            </p>
+
+        </div>
+
+
+        <div class="rubric-table">
+
+
+            <div class="rubric-row rubric-header">
+
+                <div>
+                    Area
+                </div>
+
+                <div>
+                    What We Look For
+                </div>
+
+                <div>
+                    Weight
+                </div>
+
+            </div>
+
+
+            <div class="rubric-row">
+
+                <div>
+                    Research Quality
+                </div>
+
+                <div>
+                    Realistic target account, relevant decision-makers,
+                    accurate roles, credible sources, and thoughtful
+                    account selection.
+                </div>
+
+                <div class="rubric-score">
+                    25%
+                </div>
+
+            </div>
+
+
+            <div class="rubric-row">
+
+                <div>
+                    Copywriting
+                </div>
+
+                <div>
+                    Personalized, concise, professional messaging that
+                    communicates value instead of simply listing
+                    services or features.
+                </div>
+
+                <div class="rubric-score">
+                    25%
+                </div>
+
+            </div>
+
+
+            <div class="rubric-row">
+
+                <div>
+                    Sales Agility
+                </div>
+
+                <div>
+                    Ability to handle resistance, understand the
+                    prospect's existing environment, and position
+                    openEd Labs as complementary.
+                </div>
+
+                <div class="rubric-score">
+                    25%
+                </div>
+
+            </div>
+
+
+            <div class="rubric-row">
+
+                <div>
+                    Communication &amp; Energy
+                </div>
+
+                <div>
+                    Clear, confident, natural, customer-centric
+                    communication with a compelling reason to meet.
+                </div>
+
+                <div class="rubric-score">
+                    25%
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SUBMISSION
+========================= -->
+
+<section class="submission" id="submission">
+
+    <div class="container">
+
+        <div class="submission-grid">
+
+
+            <div class="submission-card">
+
+                <div class="section-label">
+                    Final Submission
+                </div>
+
+                <h3>
+                    Prepare your strategy brief
+                </h3>
+
+                <p>
+                    Keep your submission focused and practical. We are
+                    interested in how you think through an actual
+                    business-development opportunity.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Recommended format: PDF or document
+                    </li>
+
+                    <li>
+                        Keep the strategy brief concise and structured
+                    </li>
+
+                    <li>
+                        Include links to your research sources
+                    </li>
+
+                    <li>
+                        Include your Loom link if you record a video
+                    </li>
+
+                    <li>
+                        Clearly identify the decision-maker you selected
+                        for your outreach
+                    </li>
+
+                    <li>
+                        Do not claim an email address is verified if it
+                        is only an inferred pattern
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    The Goal
+                </h3>
+
+                <p>
+                    Your work should answer one question:
+                    “Why would this decision-maker agree to spend
+                    15 minutes speaking with openEd Labs?”
+                </p>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        Target
+                    </strong>
+
+                    <span>
+                        Academic institution or training provider
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        Decision
+                    </strong>
+
+                    <span>
+                        Identify the right person to approach
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>
+                        Objective
+                    </strong>
+
+                    <span>
+                        Secure an initial 15-minute discovery meeting
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-inner">
+
+            <div>
+
+                <h2>
+                    Ready to turn research into a real sales opportunity?
+                </h2>
+
+                <p>
+                    Show us how you would approach a high-value
+                    academic prospect on behalf of openEd Labs.
+                </p>
+
+            </div>
+
+            <a
+                href="mailto:openedlabs@gmail.com"
+                class="btn btn-primary"
+            >
+                Submit Your Assessment
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+
+            <span class="footer-brand">
+                openEd Labs
+            </span>
+
+            <span>
+                &nbsp;| Business Development Executive Assessment
+            </span>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a
+                href="https://openedlabs.eduspace.work"
+                target="_blank"
+            >
+                Website
+            </a>
+
+            <a
+                href="mailto:openedlabs@gmail.com"
+            >
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("show");
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
